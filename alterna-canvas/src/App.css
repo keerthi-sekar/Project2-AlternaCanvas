@@ -1,0 +1,54 @@
+.course {
+  margin-left: 100px;
+  overflow-x: hidden;
+}
+
+.course-header {
+  height: 70px;
+  width: 99%;
+  background-color: lightgray;
+  color: black;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-size: xx-large;
+}
+
+.course-tree {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  height: 800px;
+  width: 200px;
+}
+
+.course-body-inner {
+  display: flex;
+}
+
+.course-progress-tracker {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+}
+
+.hours-worked-graph {
+  height: 300px;
+  width: 800px;
+  padding: 50px;
+}
+
+.progress-inner {
+  padding: 20px;
+}
+
+.course-body {
+  display: flex;
+}
+
+.active-assignments {
+  border: 1px solid black;
+  padding: 20px;
+  padding-top: 10px;
+  margin: 10px;
+  width: 200px;
+}
