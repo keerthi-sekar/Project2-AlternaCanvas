@@ -1,6 +1,9 @@
-.course {
-  margin-left: 100px;
+.main-content {
+  /* margin-left: 100px; */
   overflow-x: hidden;
+  margin-top: 65px;
+  width: 100%;
+  height: 100%;
 }
 
 .course-header {
@@ -50,5 +53,5 @@
   padding: 20px;
   padding-top: 10px;
   margin: 10px;
-  width: 200px;
+  width: 15%;
 }

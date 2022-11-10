@@ -10,7 +10,7 @@ import Progress from "./Progress";
 
 function Course() {
   return (
-    <div className="course">
+    <div className="main-content">
       <header className="course-header">User Interface I</header>
       <div className="course-body">
         <div className="course-body-inner">
