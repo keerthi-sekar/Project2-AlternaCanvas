@@ -1,3 +1,4 @@
+import React, {Component}  from "react";
 import asn1 from "./course-data/ui/assignments/assignment_01.html";
 import asn2 from "./course-data/ui/assignments/assignment_02.html";
 import asn3 from "./course-data/ui/assignments/assignment_03.html";
