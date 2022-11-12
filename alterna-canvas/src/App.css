@@ -29,15 +29,16 @@
 }
 
 .course-progress-tracker {
-  width: 300px;
-  height: 300px;
-  padding: 20px;
+  width: 400px;
+  height: 400px;
+  margin-left: 250px;
 }
 
 .hours-worked-graph {
   height: 300px;
   width: 800px;
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .progress-inner {
@@ -49,9 +50,10 @@
 }
 
 .active-assignments {
-  border: 1px solid black;
+  border: 1px solid gray;
   padding: 20px;
   padding-top: 10px;
   margin: 10px;
   width: 15%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

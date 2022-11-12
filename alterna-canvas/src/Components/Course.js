@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}  from "react";
 import TreeView from '@mui/lab/TreeView';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -7,8 +7,12 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Progress from "./Progress";
+import Home from './Home';
+// var perf = require("./ui/course_info/syllabus.html")
 
 function Course() {
+    const [component, setComponent] = useState('test')
+    
   return (
     <div className="main-content">
       <header className="course-header">User Interface I</header>
@@ -23,13 +27,14 @@ function Course() {
                     sx={{ height: "100%", flexGrow: 1, maxWidth: 400, overflow: 'hidden' }}
                     >
                     <TreeItem nodeId="1" label="Progress">
-                        <TreeItem nodeId="2" label="Grades" />
-                        <TreeItem nodeId="3" label="Assignments" />
+                        <TreeItem nodeId="2" label="Overview" onClick={() => setComponent("Progress")}/>
+                        <TreeItem nodeId="3" label="Grades" onClick={() => setComponent("Grades")}/>
+                        <TreeItem nodeId="4" label="Assignments" onClick={() => setComponent("Assignments")}/>
                     </TreeItem>
                     <TreeItem nodeId="5" label="Info">
-                        <TreeItem nodeId="6" label="Annoucements" />
-                        <TreeItem nodeId="7" label="Sylabus" />
-                        <TreeItem nodeId="8" label="People" />
+                        <TreeItem nodeId="6" label="Annoucements" onClick={() => setComponent("Annoucements")}/>
+                        <TreeItem nodeId="7" label="Syllabus" onClick={() => setComponent("Syllabus")}/>
+                        <TreeItem nodeId="8" label="People" onClick={() => setComponent("People")}/>
                     </TreeItem>
                     <TreeItem nodeId="9" label="Meet">
                         <TreeItem nodeId="10" label="Zoom"/>
@@ -38,7 +43,12 @@ function Course() {
                     </TreeItem>
                 </TreeView>
             </div>
-            <Progress/>
+            {
+                // component === 'Progress' ?
+                <Progress />
+                // :
+                // <div dangerouslySetInnerHTML={ {__html: perf} } />
+            }
         </div>
         <div className="active-assignments">
             <h1 style={{textAlign: "center"}}>Active Assignments</h1>
