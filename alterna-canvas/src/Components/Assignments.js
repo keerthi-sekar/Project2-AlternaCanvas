@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from "react";
+import React, {useState}  from "react";
 import {ListItem, List, ListItemText, Typography, Divider} from '@mui/material';
 import uiData from "./course-data/ui/metadata.json"
 import graphData from "./course-data/computer_graphics/metadata.json"
@@ -86,7 +86,7 @@ function Assignments(props) {
                 </List>
                 :
                 <div>
-                <button onClick={() => setTitle("Assignments")}>Go Back</button>
+                <button className="btn btn-primary" onClick={() => setTitle("Assignments")}>Go Back</button>
                     <AssignmentInfo assignment={assignmentTitle}/>
                 </div>
             }

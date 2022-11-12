@@ -1,5 +1,4 @@
 .main-content {
-  /* margin-left: 100px; */
   overflow-x: hidden;
   margin-top: 65px;
   width: 100%;
@@ -15,6 +14,7 @@
   display: flex;
   align-items: center;
   font-size: xx-large;
+  justify-content: space-between;
 }
 
 .course-tree {
@@ -45,11 +45,13 @@
   padding: 20px;
   height: 800px;
   overflow: auto;
+  width: 100%;
 }
 
 .course-body {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .active-assignments {
@@ -57,7 +59,7 @@
   padding: 20px;
   padding-top: 10px;
   margin: 10px;
-  width: 15%;
+  width: 20%;
   /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
 }
 
@@ -81,4 +83,12 @@
 
 .MuiTreeItem-root > .MuiTreeItem-content.Mui-selected.Mui-focused {
   background: transparent;
+}
+
+.home-content {
+  padding: 50px;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  background-color: red;
 }

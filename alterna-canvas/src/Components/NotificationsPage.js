@@ -1,10 +1,10 @@
 import React from "react";
 
-function Notifications() {
+function NotificationsPage() {
   return (
     <div className="main-content">
       <h1>Notifications Placeholder</h1>
     </div>
   );
 }
-export default Notifications;
+export default NotificationsPage;
