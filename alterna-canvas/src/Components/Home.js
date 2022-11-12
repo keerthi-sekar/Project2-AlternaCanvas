@@ -21,7 +21,7 @@ function Home() {
           <div className="col text-center">
               <p></p>
               <p>FY 2022</p>
-              <div className="btn-group" role="group" style={{width: "800px", height: "100px", margin: "5px",padding: "5px",textalign: "center"}}><button className="btn btn-primary" type="button" style={{borderradius: "10px",margin: "2px"}}>Class 1</button><button className="btn btn-primary" type="button" style={{borderradius: "10px",margin: "2px"}}>Class 2</button><button className="btn btn-primary" type="button" style={{borderradius: "10px",margin: "2px"}}>Class 3</button></div>
+              <div className="btn-group" role="group" style={{width: "800px", height: "50px", margin: "5px",padding: "5px",textalign: "center"}}><button className="btn btn-primary" type="button" style={{borderradius: "10px",margin: "2px"}}>Class 1</button><button className="btn btn-primary" type="button" style={{borderradius: "10px",margin: "2px"}}>Class 2</button><button className="btn btn-primary" type="button" style={{borderradius: "10px",margin: "2px"}}>Class 3</button></div>
           </div>
           <br></br>
           <br></br>
@@ -30,7 +30,7 @@ function Home() {
             <br></br>
             <br></br>
             <div className="row">
-                <div className="col-md-12" style={{width: "450px", height: "300px",background: "#8e8c7a",borderRadius: "10px", borderColor: "black"}}>
+                <div className="col-md-12" style={{width: "450px", height: "500px",background: "#8e8c7a",borderRadius: "10px", borderColor: "black"}}>
                   <h4> Course Dashboard </h4>
                 </div>
             </div>
@@ -41,7 +41,7 @@ function Home() {
             <div className="row">
                 <br></br>
                 <br></br>
-                <div className="col-md-12" style={{width: "450px",height: "300px",background: "#8e8c7a",borderRadius: "10px", borderColor: "black"}}>
+                <div className="col-md-12" style={{width: "450px",height: "500px",background: "#8e8c7a",borderRadius: "10px", borderColor: "black"}}>
                   <h4> Plan Dashboard </h4>
                 </div>
             </div>
@@ -52,7 +52,7 @@ function Home() {
             <div className="row">
                 <br></br>
                 <br></br>
-                <div className="col-md-12" style={{width: "450px",height: "300px",background: "#8e8c7a",borderRadius: "10px", borderColor: "black"}}>
+                <div className="col-md-12" style={{width: "450px",height: "500px",background: "#8e8c7a",borderRadius: "10px", borderColor: "black"}}>
                   <h4> To Do List </h4>
                 </div>
             </div>
