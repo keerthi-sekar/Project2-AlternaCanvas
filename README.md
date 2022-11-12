@@ -2,6 +2,8 @@
 
 Project 2: User Interfaces - AlternaCanvas
 
+View full project documentation here: [Project Documentation] (https://keerthi-sekar.github.io/Project2-AlternaCanvas/)
+
 ## Installing modules for react compilation
 
 Run the following to install the proper libraries:
