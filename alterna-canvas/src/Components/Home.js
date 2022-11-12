@@ -1,24 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import 'bootstrap/dist/css/bootstrap.css';
 
 function Home() {
-  
-  var courseText = document.getElementById('course-content');
 
-  function ClassClick(classIndex)
-  {
-    switch(classIndex) {
-      case 1:
-        return courseText.textContent = "Course: Class 1";
-      case 2:
-        return courseText.textContent = "Course: Class 2";
-      case 3:
-        return courseText.textContent = "Course: Class 3";
-      default:
-        return courseText.textContent = "Course: Please Select";
-    }
-  }
+  const [className, setClass] = useState('Select Class')
 
   return (
     <div className="home-content">
@@ -39,9 +25,9 @@ function Home() {
               <p></p>
               <h3>Current Term: FY 2022</h3>
               <div className="btn-group" role="group" style={{width: "800px", height: "50px", margin: "5px",padding: "5px",textalign: "center"}}>
-                <button className="btn btn-primary" onClick={ClassClick(1)} type="button" style={{borderradius: "10px",margin: "2px"}}>Class 1</button>
-                <button className="btn btn-primary" onClick={ClassClick(2)} type="button" style={{borderradius: "10px",margin: "2px"}}>Class 2</button>
-                <button className="btn btn-primary" onClick={ClassClick(3)} type="button" style={{borderradius: "10px",margin: "2px"}}>Class 3</button>
+                <button className="btn btn-primary" onClick={() => setClass('Class 1')} type="button" style={{borderradius: "10px",margin: "2px"}}>Class 1</button>
+                <button className="btn btn-primary" onClick={() => setClass('Class 2')} type="button" style={{borderradius: "10px",margin: "2px"}}>Class 2</button>
+                <button className="btn btn-primary" onClick={() => setClass('Class 3')} type="button" style={{borderradius: "10px",margin: "2px"}}>Class 3</button>
               </div>
           </div>
           <br></br>
@@ -62,9 +48,9 @@ function Home() {
                 <div className="col-md-12" style={{width: "450px", height: "500px",background: "#d6d3ba",borderRadius: "10px", borderColor: "black"}}>
                   <h4> Course Dashboard </h4> 
                   <div>
-                    <p id="course-content"> Course Content </p>
+                    <p id="course-content"> Course Content: {className} </p>
                   </div>
-                  <button class="btn btn-primary" style={{bottom: "0", right: "0", borderRadius: "10px",margin: "2px"}}>View Full Course</button>
+                  <button class="btn btn-primary" onClick={() => alert("Going to Course Page!")} style={{bottom: "0", right: "0", borderRadius: "10px",margin: "2px"}}>View Full Course</button>
                 </div>
             </div>
           </div>
@@ -74,7 +60,7 @@ function Home() {
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#d6d3ba",borderRadius: "10px", borderColor: "black"}}>
                   <h4> To Do List </h4>
-                  <p id="list-content"> To Do List Content </p>
+                  <p id="list-content"> To Do List of {className} </p>
                 </div>
             </div>
           </div>
