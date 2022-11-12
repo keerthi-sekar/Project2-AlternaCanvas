@@ -74,7 +74,7 @@ function Progress() {
         }
     }]
     return (
-        <div className="progress-inner">
+        <div className="course-inner">
             <div className="course-progress-tracker">
                 <Doughnut data={data1} options={options1} height={250} plugins={plugins}/>
             </div>

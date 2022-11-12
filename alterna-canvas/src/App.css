@@ -41,12 +41,15 @@
   padding-right: 50px;
 }
 
-.progress-inner {
+.course-inner {
   padding: 20px;
+  height: 800px;
+  overflow: auto;
 }
 
 .course-body {
   display: flex;
+  justify-content: space-between;
 }
 
 .active-assignments {
@@ -55,5 +58,27 @@
   padding-top: 10px;
   margin: 10px;
   width: 15%;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+}
+
+
+.MuiTreeItem-root > .MuiTreeItem-content > .MuiTreeItem-label {
+  font-size: large;
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected {
+  color: red;
+  background: transparent;
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected:hover {
+  background: transparent
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected > .MuiTreeItem-label {
+  background: transparent;
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected.Mui-focused {
+  background: transparent;
 }

@@ -6,16 +6,20 @@ import TreeItem from '@mui/lab/TreeItem';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { withStyles } from "@material-ui/core/styles";
 import Progress from "./Progress";
 import Home from './Home';
-// var perf = require("./ui/course_info/syllabus.html")
+import Assignments from "./Assignments";
+import uiSyllabusHTML from "./course-data/ui/course_info/syllabus.html";
+import graphSyllabusHTML from "./course-data/computer_graphics/course_info/syllabus.html";
+import desSyllabusHTML from "./course-data/senior_design/course_info/syllabus.html";
 
-function Course() {
+function Course(props) {
     const [component, setComponent] = useState('test')
     
   return (
     <div className="main-content">
-      <header className="course-header">User Interface I</header>
+      <header className="course-header">{props.title}</header>
       <div className="course-body">
         <div className="course-body-inner">
             <div className="course-tree">
@@ -44,10 +48,22 @@ function Course() {
                 </TreeView>
             </div>
             {
-                // component === 'Progress' ?
+                component === 'Progress' ?
                 <Progress />
-                // :
-                // <div dangerouslySetInnerHTML={ {__html: perf} } />
+                :
+                component === 'Syllabus' ?
+                    props.class === 'ui' ?
+                        <div className="course-inner" dangerouslySetInnerHTML={ {__html: uiSyllabusHTML} } />
+                    :
+                    props.class === 'computer_graphics' ?
+                        <div className="course-inner" dangerouslySetInnerHTML={ {__html: graphSyllabusHTML} } />
+                    :
+                        <div className="course-inner" dangerouslySetInnerHTML={ {__html: desSyllabusHTML} } />
+                :
+                component === 'Assignments' ?
+                <Assignments class="ui"/>
+                :
+                <Progress/>
             }
         </div>
         <div className="active-assignments">
