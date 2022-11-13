@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Whitelist webpack config
+!/node_modules/react-scripts/config/webpack.config.js
+
 # testing
 /coverage
 
