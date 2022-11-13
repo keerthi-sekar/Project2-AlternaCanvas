@@ -9,12 +9,13 @@ import TodoList from "./TodoList";
 import Grades from "./Grades";
 import Annoucements from "./Annoucements";
 import Info from "./Info";
-import uiSyllabusHTML from "./course-data/ui/course_info/syllabus.html";
-import graphSyllabusHTML from "./course-data/computer_graphics/course_info/syllabus.html";
-import desSyllabusHTML from "./course-data/senior_design/course_info/syllabus.html";
+import Plan from "./Plan";
+import uiSyllabusHTML from "../course-data/ui/course_info/syllabus.html";
+import graphSyllabusHTML from "../course-data/computer_graphics/course_info/syllabus.html";
+import desSyllabusHTML from "../course-data/senior_design/course_info/syllabus.html";
 
 function Course(props) {
-    const [component, setComponent] = useState('test')
+    const [component, setComponent] = useState('Progress')
     
   return (
     <div className="main-content">
@@ -33,22 +34,23 @@ function Course(props) {
                         <TreeItem nodeId="2" label="Overview" onClick={() => setComponent("Progress")}/>
                         <TreeItem nodeId="3" label="Grades" onClick={() => setComponent("Grades")}/>
                         <TreeItem nodeId="4" label="Assignments" onClick={() => setComponent("Assignments")}/>
+                        <TreeItem nodeId="5" label="Plan" onClick={() => setComponent("Plan")}/>
                     </TreeItem>
-                    <TreeItem nodeId="5" label="Information">
-                        <TreeItem nodeId="6" label="Overview" onClick={() => setComponent("Info")}/>
-                        <TreeItem nodeId="7" label="Annoucements" onClick={() => setComponent("Annoucements")}/>
-                        <TreeItem nodeId="8" label="Syllabus" onClick={() => setComponent("Syllabus")}/>
+                    <TreeItem nodeId="6" label="Information">
+                        <TreeItem nodeId="7" label="Overview" onClick={() => setComponent("Info")}/>
+                        <TreeItem nodeId="8" label="Annoucements" onClick={() => setComponent("Annoucements")}/>
+                        <TreeItem nodeId="9" label="Syllabus" onClick={() => setComponent("Syllabus")}/>
                     </TreeItem>
-                    <TreeItem nodeId="9" label="Meet">
-                        <TreeItem nodeId="10" label="Zoom"/>
-                        <TreeItem nodeId="11" label="Teams"/>
-                        <TreeItem nodeId="12" label="Discussion" />
+                    <TreeItem nodeId="10" label="Meet">
+                        <TreeItem nodeId="11" label="Zoom"/>
+                        <TreeItem nodeId="12" label="Teams"/>
+                        <TreeItem nodeId="13" label="Discussion" />
                     </TreeItem>
                 </TreeView>
             </div>
             {
                 component === 'Progress' ?
-                <Progress />
+                <Progress setComponent={setComponent}/>
                 :
                 component === 'Syllabus' ?
                     props.class === 'ui' ?
@@ -63,15 +65,18 @@ function Course(props) {
                 <Assignments class={props.class}/>
                 :
                 component === 'Grades' ?
-                <Grades class={props.class}/>
+                <Grades class={props.class} student={props.student} title={props.title}/>
                 :
                 component === 'Annoucements' ?
                 <Annoucements />
                 :
                 component === 'Info' ?
-                <Info class={props.title}/>
+                <div className="course-inner"><Info class={props.title}/></div>
                 :
-                <Progress/>
+                component === 'Plan' ?
+                <Plan/>
+                :
+                <Progress setComponent={setComponent}/>
             }
         </div>
         <div className="active-assignments">
