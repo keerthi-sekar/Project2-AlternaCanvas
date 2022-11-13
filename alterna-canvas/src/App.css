@@ -1,5 +1,4 @@
 .main-content {
-  /* margin-left: 100px; */
   overflow-x: hidden;
   margin-top: 65px;
   width: 100%;
@@ -15,6 +14,7 @@
   display: flex;
   align-items: center;
   font-size: xx-large;
+  justify-content: space-between;
 }
 
 .course-tree {
@@ -29,29 +29,66 @@
 }
 
 .course-progress-tracker {
-  width: 300px;
-  height: 300px;
-  padding: 20px;
+  width: 400px;
+  height: 400px;
+  margin-left: 250px;
 }
 
 .hours-worked-graph {
   height: 300px;
   width: 800px;
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-.progress-inner {
+.course-inner {
   padding: 20px;
+  height: 800px;
+  overflow: auto;
+  width: 100%;
 }
 
 .course-body {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .active-assignments {
-  border: 1px solid black;
+  border: 1px solid gray;
   padding: 20px;
   padding-top: 10px;
   margin: 10px;
-  width: 15%;
+  width: 20%;
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+}
+
+
+.MuiTreeItem-root > .MuiTreeItem-content > .MuiTreeItem-label {
+  font-size: large;
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected {
+  color: red;
+  background: transparent;
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected:hover {
+  background: transparent
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected > .MuiTreeItem-label {
+  background: transparent;
+}
+
+.MuiTreeItem-root > .MuiTreeItem-content.Mui-selected.Mui-focused {
+  background: transparent;
+}
+
+.home-content {
+  padding: 50px;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  background-color: red;
 }

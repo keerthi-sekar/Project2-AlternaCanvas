@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
+import {Home, CalendarMonth, Notifications, EmojiEvents, Description} from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -16,12 +17,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import Course from './Course';
 import Calendar from './Calendar';
-import Home from './Home';
-import Notifications from './Notifications';
+import HomePage from './HomePage';
+import NotificationsPage from './NotificationsPage';
 import Rewards from './Rewards';
 import Notes from './Notes';
 
@@ -151,7 +149,7 @@ function Main() {
                     justifyContent: 'center',
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} {/* Use similar logic here to determine correct icons */}
+                  {index === 0 ? <Home /> : index === 1 ? <CalendarMonth/> : index === 2 ? <Notifications/> : index === 3 ? <EmojiEvents/> : <Description/>}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
@@ -161,13 +159,13 @@ function Main() {
       </Drawer>
         {
           component === 'Home' ?
-          <Home />
+          <HomePage />
           :
           component === 'Calendar' ?
           <Calendar />
           :
           component === 'Notifications' ?
-          <Notifications />
+          <NotificationsPage />
           :
           component === 'Rewards' ?
           <Rewards />
