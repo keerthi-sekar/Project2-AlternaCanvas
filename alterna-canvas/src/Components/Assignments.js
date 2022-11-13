@@ -8,10 +8,10 @@ import AssignmentInfo from "./Assignment_Info";
 function Assignments(props) {
     const [assignmentTitle, setTitle] = useState("Assignments")
     var assignments = [];
-    if(props.class == "ui") {
+    if(props.class === "ui") {
         var assignments = [];
         uiData.map(item => {
-            if(item.folder == "assignment") {
+            if(item.folder === "assignment") {
                 var obj = {
                     title: item.title,
                     due: item.end_or_due
@@ -20,10 +20,10 @@ function Assignments(props) {
             }
         })
     }
-    else if(props.class == "computer_graphics") {
+    else if(props.class === "computer_graphics") {
         var assignments = [];
         graphData.map(item => {
-            if(item.folder == "assignment") {
+            if(item.folder === "assignment") {
                 var obj = {
                     title: item.title,
                     due: item.end_or_due
@@ -34,7 +34,7 @@ function Assignments(props) {
     }
     else {
         desData.map(item => {
-            if(item.folder == "assignment") {
+            if(item.folder === "assignment") {
                 var obj = {
                     title: item.title,
                     due: item.end_or_due
