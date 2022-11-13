@@ -61,7 +61,10 @@ function HomePage() {
             <div className="row">
                 <div className="col-md-12" style={{width: "450px", height: "500px",background: "#d6d3ba",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Course Dashboard </h4> 
-                  <Info class={className}/>
+                  <div>
+                    <p id="course-content"> Course Content: {className} </p>
+                  </div>
+                  {/* <Info class={className}/> */}
                   <button class="btn btn-primary" onClick={() => setShowCourse(true)} disabled={className==="Select Class"} style={{bottom: "0", right: "0", borderRadius: "10px",margin: "2px"}}>View Full Course</button>
                 </div>
             </div>
