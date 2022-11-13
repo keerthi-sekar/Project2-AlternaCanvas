@@ -1,5 +1,4 @@
 import React from "react";
-import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { Bar, Doughnut } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
@@ -13,22 +12,22 @@ function Progress() {
             label: 'My First Dataset',
             data: [1, 2, 0, 0, 5, 6, 3],
             backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)'
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2'
             ],
             borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)',
-            'rgb(255, 99, 132)'
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2',
+            '#1976d2'
             ],
             borderWidth: 1
         }]

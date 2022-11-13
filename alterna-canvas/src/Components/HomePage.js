@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import 'bootstrap/dist/css/bootstrap.css';
 import Course from "./Course";
 import TodoList from "./TodoList";
+import Info from "./Info";
 
 function HomePage() {
 
@@ -63,6 +64,7 @@ function HomePage() {
                   <div>
                     <p id="course-content"> Course Content: {className} </p>
                   </div>
+                  {/* <Info class={className}/> */}
                   <button class="btn btn-primary" onClick={() => setShowCourse(true)} disabled={className==="Select Class"} style={{bottom: "0", right: "0", borderRadius: "10px",margin: "2px"}}>View Full Course</button>
                 </div>
             </div>
