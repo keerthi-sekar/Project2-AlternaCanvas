@@ -6,6 +6,9 @@ import TreeItem from '@mui/lab/TreeItem';
 import Progress from "./Progress";
 import Assignments from "./Assignments";
 import TodoList from "./TodoList";
+import Grades from "./Grades";
+import Annoucements from "./Annoucements";
+import Info from "./Info";
 import uiSyllabusHTML from "./course-data/ui/course_info/syllabus.html";
 import graphSyllabusHTML from "./course-data/computer_graphics/course_info/syllabus.html";
 import desSyllabusHTML from "./course-data/senior_design/course_info/syllabus.html";
@@ -58,6 +61,15 @@ function Course(props) {
                 :
                 component === 'Assignments' ?
                 <Assignments class={props.class}/>
+                :
+                component === 'Grades' ?
+                <Grades class={props.class}/>
+                :
+                component === 'Annoucements' ?
+                <Annoucements />
+                :
+                component === 'Info' ?
+                <Info class={props.title}/>
                 :
                 <Progress/>
             }
