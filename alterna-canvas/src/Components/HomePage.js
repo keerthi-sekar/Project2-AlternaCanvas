@@ -50,7 +50,7 @@ function HomePage() {
             <br></br>
             <div className="row">
                 <br></br>
-                <div className="col-md-12" style={{width: "450px",height: "500px",background: "#d6d3ba",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
+                <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Plan Dashboard </h4>
                 </div>
             </div>
@@ -58,7 +58,7 @@ function HomePage() {
           <div className="col-md-4">
             <br></br>
             <div className="row">
-                <div className="col-md-12" style={{width: "450px", height: "500px",background: "#d6d3ba",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
+                <div className="col-md-12" style={{width: "450px", height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Course Dashboard </h4> 
                   <div>
                     <p id="course-content"> Course Content: {className} </p>
@@ -71,7 +71,7 @@ function HomePage() {
             <br></br>
             <div className="row">
                 <br></br>
-                <div className="col-md-12" style={{width: "450px",height: "500px",background: "#d6d3ba",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
+                <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <TodoList/>
                 </div>
             </div>
