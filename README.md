@@ -12,4 +12,6 @@ npm install @mui/system @emotion/react @emotion/styled @material-ui/core
 npm install --save react-helmet
 npm install bootstrap --save
 npm install html-loader
+npm install css-minimizer-webpack-plugin --save-dev
+npm install babel-preset-es2015
 ```
