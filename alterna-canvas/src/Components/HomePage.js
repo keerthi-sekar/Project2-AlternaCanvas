@@ -3,13 +3,46 @@ import { Helmet } from "react-helmet";
 import 'bootstrap/dist/css/bootstrap.css';
 import Course from "./Course";
 import TodoList from "./TodoList";
+import 'react-circular-progressbar/dist/styles.css';
+import { Doughnut } from 'react-chartjs-2';
 import Info from "./Info";
 
 function HomePage() {
 
   const [className, setClass] = useState('Select Class')
   const [showCourse, setShowCourse] = useState(false);
-
+  const [component, setComponent] = useState('default')
+  
+  const chartData = [20, 20, 15, 45];
+  const showData = chartData[0] + chartData[1] + chartData[2] + "%";
+  const data1 = {
+      labels: ["User Interface", "Computer Graphics", "Senior Design", "Remaining Tasks"],
+      datasets: [
+          {
+          data: chartData,
+          color: "black",
+          backgroundColor: ["purple", "blue", "orange", "white"]
+          }
+      ],
+      text: showData
+  };
+  const options1 = {
+      responsive: true,
+      plugins: {
+          legend: {
+              display:true,
+              position: 'bottom',
+              labels: {
+                title: "Courses",
+                color: 'rgb(0,0,0)',
+              }
+          }
+      },
+      cutout: '70%',
+      responsive: true,
+      maintainAspectRatio: false,
+  };
+    
   return (
     <div>
       {showCourse ?
@@ -53,6 +86,19 @@ function HomePage() {
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Plan Dashboard </h4>
+                  <h5 style={{textAlign: "center"}}>Semester Plan Progress</h5>
+                  <div className="home-progress-tracker">
+                    <Doughnut data={data1} options={options1} height={250}/>
+                  </div>
+                  <br></br>
+                  <strong>User Interface: </strong> <strong style={{color: "green"}}>On Track</strong>
+                  <br></br>
+                  <strong>Computer Graphics: </strong> <strong style={{color: "green"}}>On Track</strong>
+                  <br></br>
+                  <strong>Senior Design: </strong> <strong style={{color: "green"}}>On Track</strong>
+                  <br></br>
+                  <br></br>
+                  <strong> 3 out of 3 plans on track to complete: </strong> <strong style={{color: "blue"}}> 12/10/2022 </strong>
                 </div>
             </div>
           </div>
