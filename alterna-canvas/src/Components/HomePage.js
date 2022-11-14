@@ -130,7 +130,7 @@ function HomePage(props) {
             <div className="row">
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
-                  <TodoList title={className}/>
+                  <TodoList title={className} student={props.student}/>
                 </div>
             </div>
           </div>

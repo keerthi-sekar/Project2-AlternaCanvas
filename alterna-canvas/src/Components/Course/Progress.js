@@ -2,15 +2,29 @@ import React from "react";
 import 'react-circular-progressbar/dist/styles.css';
 import { Bar, Doughnut } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
+import annaData from "../student-data/anna-chambers.json"
+import keerthiData from "../student-data/keerthi-sekar.json"
+import tomData from "../student-data/tom-meyers.json"
 
 function Progress(props) {
+    var hoursWorked = []
+    if(props.class === "ui") {
+        hoursWorked = props.student === "Anna" ? annaData.course[2].hoursWorked : props.student === "Keerthi" ? keerthiData.course[2].hoursWorked : tomData.course[2].hoursWorked;
+    }
+    else if(props.class === "computer_graphics") {
+        hoursWorked = props.student === "Anna" ? annaData.course[0].hoursWorked : props.student === "Keerthi" ? keerthiData.course[0].hoursWorked : tomData.course[0].hoursWorked;
+    }
+    else {
+        hoursWorked = props.student === "Anna" ? annaData.course[1].hoursWorked : props.student === "Keerthi" ? keerthiData.course[1].hoursWorked : tomData.course[1].hoursWorked;
+    }
+
     const percentage = 25;
     const labels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const data = {
         labels: labels,
         datasets: [{
             label: 'My First Dataset',
-            data: [1, 2, 0, 0, 5, 6, 3],
+            data: hoursWorked,
             backgroundColor: [
             '#1976d2',
             '#1976d2',
