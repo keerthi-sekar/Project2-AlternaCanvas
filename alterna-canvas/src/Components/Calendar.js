@@ -5,7 +5,11 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import {ListItem, List, ListItemText, Typography, Divider} from '@mui/material';
 import './Calendar.css'
-
+import './Course/Assignments.js'
+import uiData from "./course-data/ui/metadata.json"
+import graphData from "./course-data/computer_graphics/metadata.json"
+import desData from "./course-data/senior_design/metadata.json"
+import { borderColor } from "@mui/system";
 
 
 var assns = [

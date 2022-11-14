@@ -13,7 +13,7 @@ function HomePage(props) {
 
   const [className, setClass] = useState('Select Class')
   const [showCourse, setShowCourse] = useState(false);
-  const [courseName, setCourseInfo] = useState('Select Class')
+  const [courseNum, setCourseNum] = useState(" ")
   
   const chartData = [20, 20, 15, 45];
   const showData = chartData[0] + chartData[1] + chartData[2] + "%";
@@ -44,9 +44,11 @@ function HomePage(props) {
       responsive: true,
       maintainAspectRatio: false,
   };
-    
+
   return (
     <div>
+      <br></br>
+      <br></br>
       {showCourse ?
       className === "User Interface" ?
         <Course title={className} class={"ui"} setShowCourse={setShowCourse} student={props.student}/>
@@ -73,9 +75,9 @@ function HomePage(props) {
           <div className="col text-center">
               <h3>Current Term: FY 2022</h3>
               <div className="btn-group" role="group" style={{width: "800px", height: "50px", margin: "5px",padding: "5px",textalign: "center"}}>
-                <button className="btn btn-primary" onClick={() => setClass('User Interface')} type="button" style={{borderradius: "10px",margin: "2px"}}>User Interface</button>
-                <button className="btn btn-primary" onClick={() => setClass('Computer Graphics')} type="button" style={{borderradius: "10px",margin: "2px"}}>Computer Graphics</button>
-                <button className="btn btn-primary" onClick={() => setClass('Senior Design')} type="button" style={{borderradius: "10px",margin: "2px"}}>Senior Design</button>
+                <button className="btn btn-primary" onClick={() => {setClass('User Interface'); setCourseNum('5067')}} type="button" style={{borderradius: "10px",margin: "2px"}}>User Interface</button>
+                <button className="btn btn-primary" onClick={() => {setClass('Computer Graphics'); setCourseNum('5124')}} type="button" style={{borderradius: "10px",margin: "2px"}}>Computer Graphics</button>
+                <button className="btn btn-primary" onClick={() => {setClass('Senior Design'); setCourseNum('5001')}} type="button" style={{borderradius: "10px",margin: "2px"}}>Senior Design</button>
               </div>
           </div>
           <br></br>
@@ -107,14 +109,16 @@ function HomePage(props) {
             <br></br>
             <div className="row">
                 <div className="col-md-12" style={{width: "450px", height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
-                  <h4> Course Dashboard </h4> 
+                  <h4><strong>{className}: CS {courseNum}</strong> </h4>
                   <Divider component="h4"/>
                   {className === "Select Class" ? 
                   <div>
-                    <p id="course-content">Select Class</p>
+                    <p id="course-content">Select Class</p> 
                   </div> :
                   <div>
+                    <br></br>
                     <OverallGrade student={props.student} class={className}/>
+                    <br></br>
                     <Info class={className}/>
                     <button class="btn btn-primary" onClick={() => setShowCourse(true)} disabled={className==="Select Class"} style={{bottom: "0", right: "0", borderRadius: "10px",margin: "2px"}}>View Full Course</button>
                   </div>}
@@ -126,7 +130,7 @@ function HomePage(props) {
             <div className="row">
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
-                  <TodoList/>
+                  <TodoList title={className}/>
                 </div>
             </div>
           </div>
