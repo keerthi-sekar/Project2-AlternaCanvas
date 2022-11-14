@@ -23,6 +23,8 @@ import NotificationsPage from './NotificationsPage';
 import Rewards from './Rewards';
 import Notes from './Notes';
 import {FormControl, InputLabel, NativeSelect, Select, MenuItem} from '@mui/material';
+import Course from './Course/Course';
+
 
 const drawerWidth = 240;
 
@@ -189,13 +191,18 @@ function Main() {
           <HomePage student={student}/>
           :
           component === 'Calendar' ?
-          <Calendar />
+          <Calendar
+          setComponent={setComponent}
+           />
           :
           component === 'Notifications' ?
           <NotificationsPage />
           :
           component === 'Rewards' ?
           <Rewards />
+          :
+          component === 'Course' ?
+          <Course />
           :
           component === 'Notes' ?
           <Notes />
