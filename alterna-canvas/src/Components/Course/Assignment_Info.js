@@ -1,12 +1,12 @@
 import React, {Component}  from "react";
-import asn1 from "./course-data/ui/assignments/assignment_01.html";
-import asn2 from "./course-data/ui/assignments/assignment_02.html";
-import asn3 from "./course-data/ui/assignments/assignment_03.html";
-import asn4 from "./course-data/ui/assignments/assignment_04.html";
-import asn5 from "./course-data/ui/assignments/assignment_05.html";
-import asn6 from "./course-data/ui/assignments/06.html";
-import asn7 from "./course-data/ui/assignments/07.html";
-import asn8 from "./course-data/ui/assignments/08.html";
+import asn1 from "../course-data/ui/assignments/assignment_01.html";
+import asn2 from "../course-data/ui/assignments/assignment_02.html";
+import asn3 from "../course-data/ui/assignments/assignment_03.html";
+import asn4 from "../course-data/ui/assignments/assignment_04.html";
+import asn5 from "../course-data/ui/assignments/assignment_05.html";
+import asn6 from "../course-data/ui/assignments/06.html";
+import asn7 from "../course-data/ui/assignments/07.html";
+import asn8 from "../course-data/ui/assignments/08.html";
 
 function AssignmentInfo(props) {
 

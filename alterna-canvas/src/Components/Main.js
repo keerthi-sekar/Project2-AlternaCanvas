@@ -22,6 +22,7 @@ import HomePage from './HomePage';
 import NotificationsPage from './NotificationsPage';
 import Rewards from './Rewards';
 import Notes from './Notes';
+import {FormControl, InputLabel, NativeSelect, Select, MenuItem} from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -103,11 +104,18 @@ function Main() {
     setOpen(false);
   };
 
+  const [student, setStudent] = React.useState("Anna");
+
+  const handleChange = (event) => {
+    setStudent(event.target.value);
+  };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
+        <Toolbar style={{display: "flex", justifyContent: "space-between"}}>
+          <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -123,6 +131,25 @@ function Main() {
           <Typography variant="h6" noWrap component="div">
             Alterna-Canvas
           </Typography>
+          </div>
+          <Box sx={{ minWidth: 120}}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Student</InputLabel>
+            <Select
+              defaultValue={"Anna"}
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={student}
+              label="Student"
+              onChange={handleChange}
+              style={{"background": "white"}}
+            >
+              <MenuItem value={"Anna"}>Anna</MenuItem>
+              <MenuItem value={"Keerthi"}>Keerthi</MenuItem>
+              <MenuItem value={"Tom"}>Tom</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -159,7 +186,7 @@ function Main() {
       </Drawer>
         {
           component === 'Home' ?
-          <HomePage />
+          <HomePage student={student}/>
           :
           component === 'Calendar' ?
           <Calendar />

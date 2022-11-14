@@ -1,52 +1,67 @@
-import React, {useState}  from "react";
+import React, {useEffect, useState}  from "react";
 import {FormControl, InputLabel, NativeSelect, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, styled } from '@mui/material';
 import { tableCellClasses } from '@mui/material/TableCell';
-import uiData from "./course-data/ui/metadata.json"
-import graphData from "./course-data/computer_graphics/metadata.json"
-import desData from "./course-data/senior_design/metadata.json"
-import AssignmentInfo from "./Assignment_Info";
+import uiData from "../course-data/ui/metadata.json"
+import graphData from "../course-data/computer_graphics/metadata.json"
+import desData from "../course-data/senior_design/metadata.json"
+import OverallGrade from "./OverallGrade";
+import annaData from "../student-data/anna-chambers.json"
+import keerthiData from "../student-data/keerthi-sekar.json"
+import tomData from "../student-data/tom-meyers.json"
 
 function Grades(props) {
     var assignments = [];
-    function randomNumberInRange(min, max) {
-        // 👇️ get number between min (inclusive) and max (inclusive)
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-    if(props.class == "ui") {
-        var assignments = [];
+    var grades = [];
+    var studentName = props.student === "Anna" ? annaData["student-name"] : props.student === "Keerthi" ? keerthiData["student-name"] : tomData["student-name"];
+
+    if(props.class === "ui") {
+        grades = props.student === "Anna" ? annaData.course[2].assignments : props.student === "Keerthi" ? keerthiData.course[2].assignments : tomData.course[2].assignments;
+        var index = 0;
         uiData.map(item => {
-            if(item.folder == "assignment") {
+            if(item.folder === "assignment") {
                 var obj = {
                     title: item.title,
                     due: item.end_or_due,
-                    percent: randomNumberInRange(1,100)
+                    points: item.points,
+                    percent: grades[index].finalgrade,
+                    incomplete: grades[index].status == "incomplete"
                 }
                 assignments.push(obj);
+                index++;
             }
         })
     }
-    else if(props.class == "computer_graphics") {
-        var assignments = [];
+    else if(props.class === "computer_graphics") {
+        grades = props.student === "Anna" ? annaData.course[0].assignments : props.student === "Keerthi" ? keerthiData.course[0].assignments : tomData.course[0].assignments;
+        var index = 0;
         graphData.map(item => {
-            if(item.folder == "assignment") {
+            if(item.folder === "assignment") {
                 var obj = {
                     title: item.title,
                     due: item.end_or_due,
-                    percent: randomNumberInRange(1,100)
+                    points: item.points,
+                    percent: grades[index].finalgrade,
+                    incomplete: grades[index].status == "incomplete"
                 }
                 assignments.push(obj);
+                index++;
             }
         })
     }
     else {
+        grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
+        var index = 0;
         desData.map(item => {
-            if(item.folder == "assignment") {
+            if(item.folder === "assignment") {
                 var obj = {
                     title: item.title,
                     due: item.end_or_due,
-                    percent: randomNumberInRange(1,100)
+                    points: item.points,
+                    percent: grades[index].finalgrade,
+                    incomplete: grades[index].status === "incomplete"
                 }
                 assignments.push(obj);
+                index++;
             }
         })
     }
@@ -84,30 +99,15 @@ function Grades(props) {
 
     return(
         <div className="course-inner" style={{display: "flex", flexDirection: "column"}}>
-            <h1>Grades</h1>
-            <FormControl style={{"width": "150px"}}>
-                <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                    Sort By
-                </InputLabel>
-                <NativeSelect
-                    defaultValue={10}
-                    inputProps={{
-                    name: 'sort by',
-                    id: 'uncontrolled-native',
-                    }}
-                >
-                    <option value={10}>Recent</option>
-                    <option value={20}>High to Low</option>
-                    <option value={30}>Low to High</option>
-                </NativeSelect>
-            </FormControl>
-            <br/>
+            <h1>Grades for {studentName}</h1>
+            <OverallGrade student={props.student} class={props.title}/>
+
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                     <TableRow>
                         <StyledTableCell>Title</StyledTableCell>
-                        <StyledTableCell>Weight</StyledTableCell>
+                        <StyledTableCell>Points</StyledTableCell>
                         <StyledTableCell>Grade</StyledTableCell>
                     </TableRow>
                     </TableHead>
@@ -121,7 +121,7 @@ function Grades(props) {
                             <StyledTableCell  component="th" scope="row">
                                 {row.title}
                             </StyledTableCell >
-                            <StyledTableCell >10</StyledTableCell >
+                            <StyledTableCell >{row.points}</StyledTableCell >
                             <StyledTableCell >{row.percent + "%"}</StyledTableCell >
                         </GreenStyledTableRow >
                         :
@@ -133,7 +133,7 @@ function Grades(props) {
                             <StyledTableCell  component="th" scope="row">
                                 {row.title}
                             </StyledTableCell >
-                            <StyledTableCell >10</StyledTableCell >
+                            <StyledTableCell >{row.points}</StyledTableCell >
                             <StyledTableCell >{row.percent + "%"}</StyledTableCell >
                         </YellowStyledTableRow >
                         :
@@ -144,8 +144,8 @@ function Grades(props) {
                             <StyledTableCell  component="th" scope="row">
                                 {row.title}
                             </StyledTableCell >
-                            <StyledTableCell >10</StyledTableCell >
-                            <StyledTableCell >{row.percent + "%"}</StyledTableCell >
+                            <StyledTableCell >{row.points}</StyledTableCell >
+                            <StyledTableCell >{row.incomplete ? "Incomplete" : row.percent + "%"}</StyledTableCell >
                         </RedStyledTableRow >
                     ))}
                     </TableBody>
