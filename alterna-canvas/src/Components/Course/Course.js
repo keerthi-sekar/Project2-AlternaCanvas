@@ -10,6 +10,7 @@ import Grades from "./Grades";
 import Annoucements from "./Annoucements";
 import Info from "./Info";
 import Plan from "./Plan";
+import Links from "./Links"
 import uiSyllabusHTML from "../course-data/ui/course_info/syllabus.html";
 import graphSyllabusHTML from "../course-data/computer_graphics/course_info/syllabus.html";
 import desSyllabusHTML from "../course-data/senior_design/course_info/syllabus.html";
@@ -42,9 +43,9 @@ function Course(props) {
                         <TreeItem nodeId="9" label="Syllabus" onClick={() => setComponent("Syllabus")}/>
                     </TreeItem>
                     <TreeItem nodeId="10" label="Meet">
-                        <TreeItem nodeId="11" label="Zoom"/>
-                        <TreeItem nodeId="12" label="Teams"/>
-                        <TreeItem nodeId="13" label="Discussion" />
+                        <TreeItem nodeId="11" label="Zoom" onClick={() => setComponent("Zoom")}/>
+                        <TreeItem nodeId="12" label="Teams" onClick={() => setComponent("Teams")}/>
+                        <TreeItem nodeId="13" label="Discussion" onClick={() => setComponent("Discussion")}/>
                     </TreeItem>
                 </TreeView>
             </div>
@@ -75,6 +76,12 @@ function Course(props) {
                 :
                 component === 'Plan' ?
                 <Plan/>
+                :
+                component === 'Zoom' ?
+                <Links link={"https://zoom.us/"} name={"Zoom"}/>
+                :
+                component === 'Teams' ?
+                <Links link={"https://www.microsoft.com/en-us/microsoft-teams/group-chat-software"} name={"Teams"}/>
                 :
                 <Progress setComponent={setComponent}/>
             }
