@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Divider } from "@mui/material";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -47,6 +47,8 @@ function HomePage(props) {
 
   return (
     <div>
+      <br></br>
+      <br></br>
       {showCourse ?
       className === "User Interface" ?
         <Course title={className} class={"ui"} setShowCourse={setShowCourse} student={props.student}/>

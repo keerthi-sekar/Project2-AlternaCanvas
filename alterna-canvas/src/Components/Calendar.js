@@ -5,7 +5,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import {ListItem, List, ListItemText, Typography, Divider} from '@mui/material';
 import './Calendar.css'
-import './Assignments.js'
+import './Course/Assignments.js'
 import uiData from "./course-data/ui/metadata.json"
 import graphData from "./course-data/computer_graphics/metadata.json"
 import desData from "./course-data/senior_design/metadata.json"
@@ -180,7 +180,6 @@ function MyCalendar() {
 
   return (   
     <div className="App">
-      
       <div className="grid-item">
         <FullCalendar 
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
