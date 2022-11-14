@@ -55,7 +55,7 @@ function Course(props) {
             </div>
             {
                 component === 'Progress' ?
-                <Progress setComponent={setComponent}/>
+                <Progress setComponent={setComponent} class={props.class} student={props.student}/>
                 :
                 component === 'Syllabus' ?
                     props.class === 'ui' ?
@@ -87,11 +87,11 @@ function Course(props) {
                 component === 'Teams' ?
                 <Links link={"https://www.microsoft.com/en-us/microsoft-teams/group-chat-software"} name={"Teams"}/>
                 :
-                <Progress setComponent={setComponent}/>
+                <Progress setComponent={setComponent} class={props.class} student={props.student}/>
             }
         </div>
         <div className="active-assignments">
-            <TodoList title={props.title}/>
+            <TodoList title={props.title} student={props.student}/>
         </div>
         </div>
     </div>

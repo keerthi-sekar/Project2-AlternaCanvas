@@ -79,7 +79,8 @@
                     "grade": "na"
                 }
             ],
-            "participation": "100"
+            "participation": "100",
+            "hoursWorked": [3,6,0,0,1,0,2]
         },
         {
             "name": "senior-design",
@@ -123,7 +124,8 @@
                 }
             ],
             "exams" : [],
-            "participation": "100"
+            "participation": "100",
+            "hoursWorked": [0,1,0,4,1,0,2]
         },
         {
             "name": "ui",
@@ -179,7 +181,8 @@
                 }
             ],
             "exams" : [],
-            "participation": "100"
+            "participation": "100",
+            "hoursWorked": [1,2,3,4,5,6,7]
         }
     ]
 
