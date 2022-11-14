@@ -11,7 +11,6 @@ function HomePage() {
 
   const [className, setClass] = useState('Select Class')
   const [showCourse, setShowCourse] = useState(false);
-  const [component, setComponent] = useState('default')
   
   const chartData = [20, 20, 15, 45];
   const showData = chartData[0] + chartData[1] + chartData[2] + "%";
@@ -31,7 +30,7 @@ function HomePage() {
       plugins: {
           legend: {
               display:true,
-              position: 'bottom',
+              position: 'right',
               labels: {
                 title: "Courses",
                 color: 'rgb(0,0,0)',
@@ -86,7 +85,8 @@ function HomePage() {
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Plan Dashboard </h4>
-                  <h5 style={{textAlign: "center"}}>Semester Plan Progress</h5>
+                  <h5 style={{textAlign: "center"}}>Semester Plan Progress: {showData} Complete </h5>
+                  <br></br>
                   <div className="home-progress-tracker">
                     <Doughnut data={data1} options={options1} height={250}/>
                   </div>
@@ -97,8 +97,7 @@ function HomePage() {
                   <br></br>
                   <strong>Senior Design: </strong> <strong style={{color: "green"}}>On Track</strong>
                   <br></br>
-                  <br></br>
-                  <strong> 3 out of 3 plans on track to complete: </strong> <strong style={{color: "blue"}}> 12/10/2022 </strong>
+                  <strong> On track to Complete: </strong> <strong style={{color: "blue"}}> 12/10/2022 </strong>
                 </div>
             </div>
           </div>
