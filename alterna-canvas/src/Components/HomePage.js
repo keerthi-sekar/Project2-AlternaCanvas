@@ -11,6 +11,7 @@ function HomePage() {
 
   const [className, setClass] = useState('Select Class')
   const [showCourse, setShowCourse] = useState(false);
+  const [courseName, setCourseInfo] = useState('Select Class')
   
   const chartData = [20, 20, 15, 45];
   const showData = chartData[0] + chartData[1] + chartData[2] + "%";
@@ -68,7 +69,6 @@ function HomePage() {
         <br></br>
         <div className="row">
           <div className="col text-center">
-              <p></p>
               <h3>Current Term: FY 2022</h3>
               <div className="btn-group" role="group" style={{width: "800px", height: "50px", margin: "5px",padding: "5px",textalign: "center"}}>
                 <button className="btn btn-primary" onClick={() => setClass('User Interface')} type="button" style={{borderradius: "10px",margin: "2px"}}>User Interface</button>
