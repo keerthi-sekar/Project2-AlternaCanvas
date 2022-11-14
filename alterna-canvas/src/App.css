@@ -33,21 +33,20 @@
 }
 
 .course-progress-tracker {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 300px;
   margin-left: 250px;
+  margin-bottom: 100px;
 }
 
 .hours-worked-graph {
   height: 300px;
   width: 800px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 80px;
 }
 
 .course-inner {
   padding: 20px;
-  /* height: 800px; */
   overflow: auto;
   min-width: 900px;
 }

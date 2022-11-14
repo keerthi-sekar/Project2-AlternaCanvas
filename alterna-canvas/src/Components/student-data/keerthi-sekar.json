@@ -112,9 +112,9 @@
                 },
                 {
                     "index": "5",
-                    "status": "incomplete",
-                    "finalgrade": "0",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "70",
+                    "completed-hours": "3"
                 },
                 {
                     "index": "6",

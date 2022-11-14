@@ -106,9 +106,9 @@
                 },
                 {
                     "index": "4",
-                    "status": "complete",
-                    "finalgrade": "70",
-                    "completed-hours": "22"
+                    "status": "incomplete",
+                    "finalgrade": "0",
+                    "completed-hours": "0"
                 },
                 {
                     "index": "5",
