@@ -1,5 +1,5 @@
 {
-    "student-name": "Anna Chambers",
+    "student-name": "Tom Meyers",
     "course": 
     [
         {
@@ -8,61 +8,61 @@
                 {
                     "index": "1",
                     "status": "complete",
-                    "final-grade": "85%",
+                    "finalgrade": "70",
                     "completed-hours": "10"
                 },
                 {
                     "index": "2",
                     "status": "complete",
-                    "final-grade": "75%",
-                    "completed-hours": "5"
+                    "finalgrade": "85",
+                    "completed-hours": "25"
                 },
                 {
                     "index": "3",
                     "status": "complete",
-                    "final-grade": "60%",
+                    "finalgrade": "80",
                     "completed-hours": "17"
                 },
                 {
                     "index": "4",
-                    "status": "incomplete",
-                    "final-grade": "0%",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "68",
+                    "completed-hours": "2"
                 },
                 {
                     "index": "4",
-                    "status": "incomplete",
-                    "final-grade": "0%",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "98",
+                    "completed-hours": "27"
                 },
                 {
                     "index": "5",
-                    "status": "incomplete",
-                    "final-grade": "0%",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "89",
+                    "completed-hours": "24"
                 },
                 {
                     "index": "6",
-                    "status": "incomplete",
-                    "final-grade": "0%",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "80",
+                    "completed-hours": "10"
                 },
                 {
                     "index": "7",
                     "status": "incomplete",
-                    "final-grade": "0%",
+                    "finalgrade": "0",
                     "completed-hours": "0"
                 },
                 {
                     "index": "8",
                     "status": "incomplete",
-                    "final-grade": "0%",
+                    "finalgrade": "0",
                     "completed-hours": "0"
                 },
                 {
                     "index": "9",
                     "status": "incomplete",
-                    "final-grade": "0%",
+                    "finalgrade": "0",
                     "completed-hours": "0"
                 }
             ],
@@ -71,7 +71,7 @@
                 {
                     "type": "midterm",
                     "status": "complete",
-                    "grade": "85%"
+                    "grade": "85"
                 },
                 {
                     "type": "final",
@@ -79,7 +79,7 @@
                     "grade": "na"
                 }
             ],
-            "participation": "100%"
+            "participation": "100"
         },
         {
             "name": "senior-design",
@@ -88,42 +88,42 @@
                 {
                     "index": "1",
                     "status": "complete",
-                    "final-grade": "100%",
-                    "completed-hours": "8"
+                    "finalgrade": "100",
+                    "completed-hours": "18"
                 },
                 {
                     "index": "2",
                     "status": "complete",
-                    "final-grade": "90%",
+                    "finalgrade": "75",
                     "completed-hours": "15"
                 },
                 {
                     "index": "3",
                     "status": "complete",
-                    "final-grade": "78%",
-                    "completed-hours": "4"
+                    "finalgrade": "98",
+                    "completed-hours": "10"
                 },
                 {
                     "index": "4",
                     "status": "complete",
-                    "final-grade": "80%",
-                    "completed-hours": "10"
+                    "finalgrade": "70",
+                    "completed-hours": "22"
                 },
                 {
                     "index": "5",
                     "status": "incomplete",
-                    "final-grade": "0%",
+                    "finalgrade": "0",
                     "completed-hours": "0"
                 },
                 {
                     "index": "6",
                     "status": "incomplete",
-                    "final-grade": "0%",
+                    "finalgrade": "0",
                     "completed-hours": "0"
                 }
             ],
             "exams" : [],
-            "participation": "100%"
+            "participation": "100"
         },
         {
             "name": "ui",
@@ -132,54 +132,54 @@
                 {
                     "index": "1",
                     "status": "complete",
-                    "final-grade": "90%",
-                    "completed-hours": "7"
+                    "finalgrade": "80",
+                    "completed-hours": "17"
                 },
                 {
                     "index": "2",
                     "status": "complete",
-                    "final-grade": "95%",
-                    "completed-hours": "10"
+                    "finalgrade": "95",
+                    "completed-hours": "12"
                 },
                 {
                     "index": "3",
                     "status": "complete",
-                    "final-grade": "86%",
-                    "completed-hours": "9"
+                    "finalgrade": "96",
+                    "completed-hours": "14"
                 },
                 {
                     "index": "4",
                     "status": "complete",
-                    "final-grade": "75%",
-                    "completed-hours": "6"
+                    "finalgrade": "75",
+                    "completed-hours": "18"
                 },
                 {
                     "index": "5",
                     "status": "complete",
-                    "final-grade": "60%",
-                    "completed-hours": "2"
+                    "finalgrade": "50",
+                    "completed-hours": "3"
                 },
                 {
                     "index": "6",
-                    "status": "incomplete",
-                    "final-grade": "0%",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "80",
+                    "completed-hours": "10"
                 },
                 {
                     "index": "7",
                     "status": "incomplete",
-                    "final-grade": "0%",
+                    "finalgrade": "0",
                     "completed-hours": "0"
                 },
                 {
                     "index": "8",
                     "status": "incomplete",
-                    "final-grade": "0%",
+                    "finalgrade": "0",
                     "completed-hours": "0"
                 }
             ],
             "exams" : [],
-            "participation": "100%"
+            "participation": "100"
         }
     ]
 

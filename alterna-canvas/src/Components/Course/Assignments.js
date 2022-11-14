@@ -1,8 +1,8 @@
 import React, {useState}  from "react";
 import {ListItem, List, ListItemText, Typography, Divider} from '@mui/material';
-import uiData from "./course-data/ui/metadata.json"
-import graphData from "./course-data/computer_graphics/metadata.json"
-import desData from "./course-data/senior_design/metadata.json"
+import uiData from "../course-data/ui/metadata.json"
+import graphData from "../course-data/computer_graphics/metadata.json"
+import desData from "../course-data/senior_design/metadata.json"
 import AssignmentInfo from "./Assignment_Info";
 
 function Assignments(props) {
