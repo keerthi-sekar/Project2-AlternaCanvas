@@ -25,15 +25,15 @@
                 },
                 {
                     "index": "4",
-                    "status": "incomplete",
-                    "finalgrade": "0",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "80",
+                    "completed-hours": "9"
                 },
                 {
                     "index": "4",
-                    "status": "incomplete",
-                    "finalgrade": "0",
-                    "completed-hours": "0"
+                    "status": "complete",
+                    "finalgrade": "75",
+                    "completed-hours": "2"
                 },
                 {
                     "index": "5",

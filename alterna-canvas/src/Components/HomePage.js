@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Divider } from "@mui/material";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -14,9 +14,20 @@ function HomePage(props) {
   const [className, setClass] = useState('Select Class')
   const [showCourse, setShowCourse] = useState(false);
   const [courseNum, setCourseNum] = useState(" ")
-  
+  const [uiPercent, setUiPercent] = useState(0)
+  const [graphPercent, setGraphPercent] = useState(0)
+  const [desPercent, setDesPercent] = useState(0)
+
+  useEffect(() => {
+      var uiProgressData = props.student === "Tom" ? [ 20, 50, 30] : props.student === "Anna" ? [10, 30, 20, 40] : [10, 50, 20, 20];
+      setUiPercent(100 -  uiProgressData[uiProgressData.length - 1])
+      var graphProgressData = props.student === "Tom" ? [60, 40] : props.student === "Anna" ? [20, 20, 40, 20] : [10, 10, 80];
+      setGraphPercent(100 -  graphProgressData[graphProgressData.length - 1])
+      var desProgressData = props.student === "Tom" ? [50, 10, 15, 25] : props.student === "Anna" ? [25, 25, 50] : [65, 35];
+      setDesPercent(100 -  desProgressData[desProgressData.length - 1])
+  },[uiPercent, graphPercent, desPercent, props.student])
+
   const chartData = [20, 20, 15, 45];
-  const showData = chartData[0] + chartData[1] + chartData[2] + "%";
   const data1 = {
       labels: ["User Interface", "Computer Graphics", "Senior Design", "Remaining Tasks"],
       datasets: [
@@ -26,7 +37,6 @@ function HomePage(props) {
           backgroundColor: ["purple", "blue", "orange", "white"]
           }
       ],
-      text: showData
   };
   const options1 = {
       responsive: true,
@@ -51,12 +61,12 @@ function HomePage(props) {
       <br></br>
       {showCourse ?
       className === "User Interface" ?
-        <Course title={className} class={"ui"} setShowCourse={setShowCourse} student={props.student}/>
+        <Course title={className} class={"ui"} setShowCourse={setShowCourse} student={props.student} percent={uiPercent}/>
       :
       className === "Computer Graphics" ?
-        <Course title={className} class={"computer_graphics"} setShowCourse={setShowCourse} student={props.student}/>
+        <Course title={className} class={"computer_graphics"} setShowCourse={setShowCourse} student={props.student} percent={graphPercent}/>
       :
-        <Course title={className} class={"senior_design"} setShowCourse={setShowCourse} student={props.student}/>
+        <Course title={className} class={"senior_design"} setShowCourse={setShowCourse} student={props.student} percent={desPercent}/>
       :
       <div className="home-content">
       <Helmet>
@@ -89,7 +99,7 @@ function HomePage(props) {
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Plan Dashboard </h4>
-                  <h5 style={{textAlign: "center"}}>Semester Plan Progress: {showData} Complete </h5>
+                  <h5 style={{textAlign: "center"}}>Semester Plan Progress: {Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100)}% Complete </h5>
                   <br></br>
                   <div className="home-progress-tracker">
                     <Doughnut data={data1} options={options1} height={250}/>
