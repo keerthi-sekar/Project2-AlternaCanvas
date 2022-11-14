@@ -71,9 +71,9 @@ function Notes() {
         <br></br>
         <br></br>
         <br></br>
-        <h4>Current Notes & Reminders</h4>
+        <h4 style={{background: "#d4e8fc",borderRadius: "10px", borderColor: "black", padding: "20px"}}><b>Current Notes & Reminders</b></h4>
         <br></br>
-				<NotesList style={{innerWidth: "200px", outerWidth: "200px"}}
+				<NotesList
 					notes={notes.filter((note) =>
 						note.text.toLowerCase().includes(searchText)
 					)}
@@ -84,6 +84,6 @@ function Notes() {
 			</div>
 		</div>
 	);
-};
+}
 
 export default Notes;
