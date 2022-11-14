@@ -34,7 +34,7 @@ function OverallGrade(props) {
     }, [totalGrade, letterGrade, grades])
 
     return(
-        <h2>Overall Grade: {totalGrade}% ({letterGrade})</h2>
+        <h4><b>Overall Grade: {totalGrade}% ({letterGrade})</b></h4>
         
     );
 
