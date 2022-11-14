@@ -10,12 +10,22 @@
 .fc-toolbar-chunk{
     margin:5px;
 }
-
-.fc-media-screen{
-    height:900px;
-    width:900px;
-}                                                                                       
-
+                                                                                     
+.fc-daygrid{
+    margin-right:-15px;
+}
+.modal {
+    display: auto;
+    position: fixed;
+    z-index: 1;
+    padding: 245px 300px 0px 85px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 .fc-daygrid-day-events{
     
     height:75px;
@@ -37,7 +47,7 @@
 
 
 .grid-item{
-    height:900px;
+    height:700px;
     width:900px;
 }
 

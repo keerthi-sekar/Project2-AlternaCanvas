@@ -7,6 +7,7 @@ import {ListItem, List, ListItemText, Typography, Divider} from '@mui/material';
 import './Calendar.css'
 
 
+
 var assns = [
   {
     id: "ui",
@@ -22,31 +23,26 @@ var assns = [
     id: "ui",
     title: 'Which smart object',
     start:'2022-09-23',
-    backgroundColor:"#800080"
   },
   {
     id: "ui",
     title: 'HTML & CSS Practice',
     start:'2022-09-23',
-    backgroundColor:"#800080"
   },
   {
     id: "ui",
     title: 'Project 1 Check-in',
     start:'2022-09-26',
-    backgroundColor:"#800080"
   },
   {
     id: "ui",
     title: 'JavaScript Practice',
     start:'2022-09-30',
-    backgroundColor:"#800080"
   },
   {
     id: "ui",
     title: 'Project 1 Implementation',
     start:'2022-10-14',
-    backgroundColor:"#800080"
   },
   {
     id: "ui",
@@ -68,31 +64,26 @@ var assns = [
     id: "graph",
     title: 'Rasterization Exercise',
     start:'2022-09-26',
-    backgroundColor:"#0000FF"
   },
   {
     id: "graph",
     title: 'Transformations Exercise',
     start:'2022-09-23',
-    backgroundColor:"#0000FF"
   },
   {
     id: "graph",
     title: 'Projection Exercises',
     start:'2022-09-30',
-    backgroundColor:"#0000FF"
   },
   {
     id: "graph",
     title: 'Texture Mapping Exercises',
     start:'2022-10-05',
-    backgroundColor:"#0000FF"
   },
   {
     id: "graph",
     title: 'Color',
     start:'2022-10-14',
-    backgroundColor:"#0000FF"
   },
   {
     id: "graph",
@@ -132,16 +123,34 @@ var assns = [
   }
 
 ];
-var today= '2022-09-16'
 
-function MyCalendar() {
+
+function MyCalendar(props) {
+
+  const [assignmentArray, setAssignmentArray] = useState(assns)
+
+  function handleToggle (e) {
+    console.log(e.target)
+    if(!e.target.checked){
+      setAssignmentArray((current)=> current.filter((assignment)=>assignment.id!=e.target.id))
+    }
+    else{
+      setAssignmentArray(assns)
+    }
+  }
+
+  function handleClick(e) {
+    props.setComponent('Course');
+  }
+
   return (   
     <div className="Appx">
       
       <div className="grid-item">
         <FullCalendar 
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialDate={"2022-09-19"}
+          now={"2022-10-15"}
+
           initialView="dayGridMonth"
           headerToolbar = {{
             start:'dayGridMonth,timeGridWeek,timeGridDay',
@@ -149,8 +158,9 @@ function MyCalendar() {
             end: 'prev,next today'
           }}
           selectable= {true}
-          dateClick={(e) => console.log(e.dateStr)}
-          events={assns}
+          eventClick={handleClick}
+          
+          events={assignmentArray}
           
           customButtons = {{
             sync:{
@@ -165,19 +175,18 @@ function MyCalendar() {
           eventBackgroundColor= '#919191'
           height = {600}
         />
+        
       </div>
       <div className="grid-item" id="gi1">
-        <h1>Filtr</h1>
-        {/* <input type="checkbox" id="class1" onClick={classToggle()} defaultChecked/>
-        <label for="class1">Class 1</label><br/> */}
-        <input type="checkbox" id="class2" defaultChecked/>
-        <label for="class2">Class 2</label><br/>
-        <input type="checkbox" id="class3" defaultChecked/>
-        <label for="class3">Class 3</label><br/>
+        <h1>Filter</h1>
+        <input type="checkbox" id="ui" onClick={handleToggle} defaultChecked/>
+        <label for="UI Design">UI Design</label><br/>
+        <input type="checkbox" id="graph" onClick={handleToggle} defaultChecked/>
+        <label for="Computer Graphics">Computer Graphics</label><br/>
+        <input type="checkbox" id="des"  onClick={handleToggle} defaultChecked/>
+        <label for="Senior Design">Senior Design</label><br/>
         <input type="checkbox" id="myEvents" defaultChecked/>
         <label for="myEvents">Your Events</label><br/>
-        <input type="checkbox" id="myNotes" defaultChecked/>
-        <label for="myNotes">Your Notes</label><br/>
 
       </div>
      
