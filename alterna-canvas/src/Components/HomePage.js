@@ -6,12 +6,45 @@ import Course from "./Course/Course";
 import TodoList from "./Course/TodoList";
 import Info from "./Course/Info";
 import OverallGrade from "./Course/OverallGrade";
+import 'react-circular-progressbar/dist/styles.css';
+import { Doughnut } from 'react-chartjs-2';
 
 function HomePage(props) {
 
   const [className, setClass] = useState('Select Class')
   const [showCourse, setShowCourse] = useState(false);
-
+  const [courseName, setCourseInfo] = useState('Select Class')
+  
+  const chartData = [20, 20, 15, 45];
+  const showData = chartData[0] + chartData[1] + chartData[2] + "%";
+  const data1 = {
+      labels: ["User Interface", "Computer Graphics", "Senior Design", "Remaining Tasks"],
+      datasets: [
+          {
+          data: chartData,
+          color: "black",
+          backgroundColor: ["purple", "blue", "orange", "white"]
+          }
+      ],
+      text: showData
+  };
+  const options1 = {
+      responsive: true,
+      plugins: {
+          legend: {
+              display:true,
+              position: 'right',
+              labels: {
+                title: "Courses",
+                color: 'rgb(0,0,0)',
+              }
+          }
+      },
+      cutout: '70%',
+      responsive: true,
+      maintainAspectRatio: false,
+  };
+    
   return (
     <div>
       {showCourse ?
@@ -38,7 +71,6 @@ function HomePage(props) {
         <br></br>
         <div className="row">
           <div className="col text-center">
-              <p></p>
               <h3>Current Term: FY 2022</h3>
               <div className="btn-group" role="group" style={{width: "800px", height: "50px", margin: "5px",padding: "5px",textalign: "center"}}>
                 <button className="btn btn-primary" onClick={() => setClass('User Interface')} type="button" style={{borderradius: "10px",margin: "2px"}}>User Interface</button>
@@ -55,6 +87,19 @@ function HomePage(props) {
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Plan Dashboard </h4>
+                  <h5 style={{textAlign: "center"}}>Semester Plan Progress: {showData} Complete </h5>
+                  <br></br>
+                  <div className="home-progress-tracker">
+                    <Doughnut data={data1} options={options1} height={250}/>
+                  </div>
+                  <br></br>
+                  <strong>User Interface: </strong> <strong style={{color: "green"}}>On Track</strong>
+                  <br></br>
+                  <strong>Computer Graphics: </strong> <strong style={{color: "green"}}>On Track</strong>
+                  <br></br>
+                  <strong>Senior Design: </strong> <strong style={{color: "green"}}>On Track</strong>
+                  <br></br>
+                  <strong> On track to Complete: </strong> <strong style={{color: "blue"}}> 12/10/2022 </strong>
                 </div>
             </div>
           </div>
