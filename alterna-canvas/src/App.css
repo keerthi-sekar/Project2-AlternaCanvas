@@ -67,6 +67,14 @@
   height: 800px;
 }
 
+.plan {
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 280px;
+  background-color: whitesmoke;
+}
+
 
 .MuiTreeItem-root > .MuiTreeItem-content > .MuiTreeItem-label {
   font-size: large;
