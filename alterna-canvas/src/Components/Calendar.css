@@ -1,4 +1,4 @@
-body {
+.Appx {
     margin-top:40px;
     margin-left:20px;
     width:auto;
@@ -12,7 +12,7 @@ body {
 }
 
 .fc-media-screen{
-    height:650px;
+    height:900px;
     width:900px;
 }                                                                                       
 
@@ -20,8 +20,16 @@ body {
     
     height:75px;
     overflow:auto;
+    cursor:pointer;
     
 }
+
+.fc-h-event:hover{
+    
+    box-shadow:#00000050 inset 2px 2px 2px;
+    
+}
+
 
 .fc-daygrid-day:hover{
     background-color:#eeeeee;
@@ -29,11 +37,15 @@ body {
 
 
 .grid-item{
-    border: solid black 3px;
-    
+    height:900px;
+    width:900px;
 }
 
 #gi1{
     width:450px;
     text-align: left;
+}
+
+input:checked{
+    fill:black;
 }
