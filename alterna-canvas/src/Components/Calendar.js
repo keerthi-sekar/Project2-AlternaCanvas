@@ -16,44 +16,43 @@ var assns = [
   {
     id: "ui",
     title: 'Getting to know you',
-    start:'2022-08-29',
-    
-    
+    start:'2022-08-29',   
   },
   {
     id: "ui",
     title: 'Sketching Practice',
-    start:'2022-09-16'
+    start:'2022-09-16',
   },
   {
     id: "ui",
     title: 'Which smart object',
-    start:'2022-09-23'
+    start:'2022-09-23',
   },
   {
     id: "ui",
     title: 'HTML & CSS Practice',
-    start:'2022-09-23'
+    start:'2022-09-23',
   },
   {
     id: "ui",
     title: 'Project 1 Check-in',
-    start:'2022-09-26'
+    start:'2022-09-26',
   },
   {
     id: "ui",
     title: 'JavaScript Practice',
-    start:'2022-09-30'
+    start:'2022-09-30',
   },
   {
     id: "ui",
     title: 'Project 1 Implementation',
-    start:'2022-10-14'
+    start:'2022-10-14',
   },
   {
     id: "ui",
     title: 'Project 1 Documentation',
-    start:'2022-10-16'
+    start:'2022-10-16',
+    backgroundColor:"#800080" 
   },
   {
     id: "graph",
@@ -68,32 +67,33 @@ var assns = [
   {
     id: "graph",
     title: 'Rasterization Exercise',
-    start:'2022-09-26'
+    start:'2022-09-26',
   },
   {
     id: "graph",
     title: 'Transformations Exercise',
-    start:'2022-09-23'
+    start:'2022-09-23',
   },
   {
     id: "graph",
     title: 'Projection Exercises',
-    start:'2022-09-30'
+    start:'2022-09-30',
   },
   {
     id: "graph",
     title: 'Texture Mapping Exercises',
-    start:'2022-10-05'
+    start:'2022-10-05',
   },
   {
     id: "graph",
     title: 'Color',
-    start:'2022-10-14'
+    start:'2022-10-14',
   },
   {
     id: "graph",
     title: 'Light & Shadow',
-    start:'2022-10-26'
+    start:'2022-10-26',
+    backgroundColor:"#0000FF"
   },
   {
     id: 'des',
@@ -128,69 +128,43 @@ var assns = [
 
 ];
 
-function MyCalendar() {
-  // Taken from Assignments.js
-  // function Assignments(props) {
-    
-  //   var assignments = [];
-  //   if(props.class === "ui") {
-        
-  //       uiData.map(item => {
-  //           if(item.folder === "assignment") {
-  //               var obj = {
-  //                   id:'ui',
-  //                   title: item.title,
-  //                   start:"2022-11-12",   
-  //               }
-  //               assignments.push(obj);
-  //           }
-  //       })
-  //   }
-  //   else if(props.class === "computer_graphics") {
-        
-  //       graphData.map(item => {
-  //           if(item.folder === "assignment") {
-  //               var obj = {
-  //                   id:'graph',
-  //                   title: item.title,
-  //                   start:item.start_or_posted,
-  //                   end: item.end_or_due
-  //               }
-  //               assignments.push(obj);
-  //           }
-  //       })
-  //   }
-  //   else {
-  //       desData.map(item => {
-  //           if(item.folder === "assignment") {
-  //               var obj = {
-  //                   id:'des',
-  //                   title: item.title,
-  //                   start:item.start_or_posted,
-  //                   end: item.end_or_due
-  //               }
-  //               assignments.push(obj);
-  //           }
-  //       })
-  //   }
-  // }
- 
 
-  
+function MyCalendar(props) {
+
+  const [assignmentArray, setAssignmentArray] = useState(assns)
+
+  function handleToggle (e) {
+    console.log(e.target)
+    if(!e.target.checked){
+      setAssignmentArray((current)=> current.filter((assignment)=>assignment.id!=e.target.id))
+    }
+    else{
+      setAssignmentArray(assns)
+    }
+  }
+
+  function handleClick(e) {
+    props.setComponent('Course');
+  }
 
   return (   
-    <div className="App">
+    <div className="Appx">
+      
       <div className="grid-item">
         <FullCalendar 
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          now={"2022-10-15"}
+
           initialView="dayGridMonth"
           headerToolbar = {{
             start:'dayGridMonth,timeGridWeek,timeGridDay',
             center: 'title',
             end: 'prev,next today'
           }}
+          selectable= {true}
+          eventClick={handleClick}
           
-          events={assns}
+          events={assignmentArray}
           
           customButtons = {{
             sync:{
@@ -205,19 +179,18 @@ function MyCalendar() {
           eventBackgroundColor= '#919191'
           height = {600}
         />
+        
       </div>
       <div className="grid-item" id="gi1">
         <h1>Filter</h1>
-        <input type="checkbox" id="class1" defaultChecked/>
-        <label for="class1">Class 1</label><br/>
-        <input type="checkbox" id="class2" defaultChecked/>
-        <label for="class2">Class 2</label><br/>
-        <input type="checkbox" id="class3" defaultChecked/>
-        <label for="class3">Class 3</label><br/>
+        <input type="checkbox" id="ui" onClick={handleToggle} defaultChecked/>
+        <label for="UI Design">UI Design</label><br/>
+        <input type="checkbox" id="graph" onClick={handleToggle} defaultChecked/>
+        <label for="Computer Graphics">Computer Graphics</label><br/>
+        <input type="checkbox" id="des"  onClick={handleToggle} defaultChecked/>
+        <label for="Senior Design">Senior Design</label><br/>
         <input type="checkbox" id="myEvents" defaultChecked/>
         <label for="myEvents">Your Events</label><br/>
-        <input type="checkbox" id="myNotes" defaultChecked/>
-        <label for="myNotes">Your Notes</label><br/>
 
       </div>
      
