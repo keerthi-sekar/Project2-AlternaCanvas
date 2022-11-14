@@ -14,7 +14,7 @@ function TodoList(props) {
   var grades = [];
   
   if(props.title === "User Interface") {
-      var grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
+      grades = props.student === "Anna" ? annaData.course[2].assignments : props.student === "Keerthi" ? keerthiData.course[2].assignments : tomData.course[2].assignments;
       var assignments = [];
       var index = 0;
       uiData.map(item => {
@@ -23,7 +23,7 @@ function TodoList(props) {
                   title: item.title,
                   due: item.end_or_due,
                   combined: item.title + ": " + item.end_or_due,
-                  checked: "{true}" ? grades[index].status === "incomplete" : grades[index].status === "complete",
+                  checked: grades[index].status === "complete",
               }
               assignments.push(obj);
               index++;
@@ -31,7 +31,7 @@ function TodoList(props) {
       })
   }
   else if(props.title === "Computer Graphics") {
-      var grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
+    grades = props.student === "Anna" ? annaData.course[0].assignments : props.student === "Keerthi" ? keerthiData.course[0].assignments : tomData.course[0].assignments;
       var assignments = [];
       var index = 0;
       graphData.map(item => {
@@ -40,7 +40,7 @@ function TodoList(props) {
                   title: item.title,
                   due: item.end_or_due,
                   combined: item.title + ": " + item.end_or_due,
-                  checked: "{true}" ? grades[index].status === "incomplete" : grades[index].status === "complete",
+                  checked: grades[index].status === "complete",
               }
               assignments.push(obj);
               index++;
@@ -48,7 +48,7 @@ function TodoList(props) {
       })
   }
   else if(props.title === "Senior Design"){
-      var grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
+    grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
       var index = 0;
       desData.map(item => {
           if(item.folder === "assignment") {
@@ -56,7 +56,7 @@ function TodoList(props) {
                   title: item.title,
                   due: item.end_or_due,
                   combined: item.title + ": " + item.end_or_due,
-                  checked: "{true}" ? grades[index].status === "incomplete" : grades[index].status === "complete",
+                  checked: grades[index].status === "complete",
               }
               assignments.push(obj);
               index++;
