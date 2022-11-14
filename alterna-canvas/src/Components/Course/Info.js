@@ -1,14 +1,24 @@
-import React, {useState}  from "react";
+import React, {useState, useEffect}  from "react";
 
 function Info(props) {
+    console.log(props.class)
     const [courseNum, setCourseNum] = useState(props.class === "User Interface" ? "5067" : props.class === "Computer Graphics" ? "5124" : "5001")
     const [times, setTimes] = useState(props.class === "User Interface" ? "Mon, Wed, Fri 1:25pm-2:20pm" : props.class === "Computer Graphics" ? "Mon, Wed, Fri 4:30-5:20pm" : "Tuesday 12:00-3:00pm")
     const [prof, setProf] = useState(props.class === "Senior Design" ? "Dr. Professor" : "Dr. Jillian Aurisano")
     const [email, setEmail] = useState(props.class === "enior Design" ? "doctor.professor@uc.edu" : "jillian.aurisano@uc.edu")
     const [officeHrs, setOfficeHrs] = useState(props.class === "User Interface" ? "After class M and F from 2:20-3:00pm, or by appointment" : props.class === "Computer Graphics" ? "After class M and F from 5:30-6:30pm, or by appointment" : "On request.")
+    
+    useEffect(() => {
+        setCourseNum(props.class === "User Interface" ? "5067" : props.class === "Computer Graphics" ? "5124" : "5001");
+        setTimes(props.class === "User Interface" ? "Mon, Wed, Fri 1:25pm-2:20pm" : props.class === "Computer Graphics" ? "Mon, Wed, Fri 4:30-5:20pm" : "Tuesday 12:00-3:00pm");
+        setProf(props.class === "Senior Design" ? "Dr. Professor" : "Dr. Jillian Aurisano");
+        setEmail(props.class === "enior Design" ? "doctor.professor@uc.edu" : "jillian.aurisano@uc.edu");
+        setOfficeHrs(props.class === "User Interface" ? "After class M and F from 2:20-3:00pm, or by appointment" : props.class === "Computer Graphics" ? "After class M and F from 5:30-6:30pm, or by appointment" : "On request.");
+    },[courseNum, times, prof, email, officeHrs, props.class])
+
     return(
-        <div className="course-inner" style={{display: "flex", flexDirection: "column"}}>
-            <h2><strong>CS {courseNum}</strong></h2>
+        <div style={{display: "flex", flexDirection: "column"}}>
+            <h2>CS {courseNum}</h2>
             <p><strong>Class times</strong>: {times},</p>
             <p><strong>Location: </strong>Baldwin 661</p>
             <p><strong>Instructor:</strong><span>&nbsp;</span>{prof}</p>

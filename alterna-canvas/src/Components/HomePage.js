@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
+import { Divider } from "@mui/material";
 import 'bootstrap/dist/css/bootstrap.css';
-import Course from "./Course";
-import TodoList from "./TodoList";
+import Course from "./Course/Course";
+import TodoList from "./Course/TodoList";
+import Info from "./Course/Info";
+import OverallGrade from "./Course/OverallGrade";
 import 'react-circular-progressbar/dist/styles.css';
 import { Doughnut } from 'react-chartjs-2';
-import Info from "./Info";
 
-function HomePage() {
+function HomePage(props) {
 
   const [className, setClass] = useState('Select Class')
   const [showCourse, setShowCourse] = useState(false);
@@ -47,12 +49,12 @@ function HomePage() {
     <div>
       {showCourse ?
       className === "User Interface" ?
-        <Course title={className} class={"ui"} setShowCourse={setShowCourse}/>
+        <Course title={className} class={"ui"} setShowCourse={setShowCourse} student={props.student}/>
       :
       className === "Computer Graphics" ?
-        <Course title={className} class={"computer_graphics"} setShowCourse={setShowCourse}/>
+        <Course title={className} class={"computer_graphics"} setShowCourse={setShowCourse} student={props.student}/>
       :
-        <Course title={className} class={"senior_design"} setShowCourse={setShowCourse}/>
+        <Course title={className} class={"senior_design"} setShowCourse={setShowCourse} student={props.student}/>
       :
       <div className="home-content">
       <Helmet>
@@ -106,11 +108,16 @@ function HomePage() {
             <div className="row">
                 <div className="col-md-12" style={{width: "450px", height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Course Dashboard </h4> 
+                  <Divider component="h4"/>
+                  {className === "Select Class" ? 
                   <div>
-                    <p id="course-content"> Course Content: {className} </p>
-                  </div>
-                  {/* <Info class={className}/> */}
-                  <button class="btn btn-primary" onClick={() => setShowCourse(true)} disabled={className==="Select Class"} style={{bottom: "0", right: "0", borderRadius: "10px",margin: "2px"}}>View Full Course</button>
+                    <p id="course-content">Select Class</p>
+                  </div> :
+                  <div>
+                    <OverallGrade student={props.student} class={className}/>
+                    <Info class={className}/>
+                    <button class="btn btn-primary" onClick={() => setShowCourse(true)} disabled={className==="Select Class"} style={{bottom: "0", right: "0", borderRadius: "10px",margin: "2px"}}>View Full Course</button>
+                  </div>}
                 </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import { Bar, Doughnut } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 
-function Progress() {
+function Progress(props) {
     const percentage = 25;
     const labels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const data = {
@@ -74,6 +74,7 @@ function Progress() {
     }]
     return (
         <div className="course-inner">
+            <button className="btn btn-primary" onClick={() => props.setComponent("Plan")}>+ Add Plan</button>
             <div className="course-progress-tracker">
                 <Doughnut data={data1} options={options1} height={250} plugins={plugins}/>
             </div>
