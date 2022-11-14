@@ -1,12 +1,13 @@
+
 body {
     margin-top:40px;
     margin-left:20px;
     width:auto;
-    display: flex;
-    flex-wrap:wrap;
-    
+    display: flex;    
 }
-
+.fc{
+    margin-top:80px;
+}
 .fc-toolbar-chunk{
     margin:5px;
 }
@@ -14,7 +15,19 @@ body {
 .fc-media-screen{
     height:650px;
     width:900px;
+}                                                                                       
+
+.fc-daygrid-day-events{
+    
+    height:75px;
+    overflow:auto;
+    
 }
+
+.fc-daygrid-day:hover{
+    background-color:#eeeeee;
+}
+
 
 .grid-item{
     border: solid black 3px;
@@ -25,8 +38,3 @@ body {
     width:450px;
     text-align: left;
 }
-
-input[type="checkbox" i]{
-    appearance: auto;
-}
-
