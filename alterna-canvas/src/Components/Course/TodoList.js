@@ -5,44 +5,61 @@ import Checkbox from '@mui/material/Checkbox';
 import uiData from "../course-data/ui/metadata.json"
 import graphData from "../course-data/computer_graphics/metadata.json"
 import desData from "../course-data/senior_design/metadata.json"
+import annaData from "../student-data/anna-chambers.json"
+import keerthiData from "../student-data/keerthi-sekar.json"
+import tomData from "../student-data/tom-meyers.json"
 
 function TodoList(props) {
   var assignments = [];
+  var grades = [];
+  
   if(props.title === "User Interface") {
+      var grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
       var assignments = [];
+      var index = 0;
       uiData.map(item => {
           if(item.folder === "assignment") {
               var obj = {
                   title: item.title,
                   due: item.end_or_due,
                   combined: item.title + ": " + item.end_or_due,
+                  checked: "{true}" ? grades[index].status === "incomplete" : grades[index].status === "complete",
               }
               assignments.push(obj);
+              index++;
           }
       })
   }
   else if(props.title === "Computer Graphics") {
+      var grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
       var assignments = [];
+      var index = 0;
       graphData.map(item => {
           if(item.folder === "assignment") {
               var obj = {
                   title: item.title,
                   due: item.end_or_due,
                   combined: item.title + ": " + item.end_or_due,
+                  checked: "{true}" ? grades[index].status === "incomplete" : grades[index].status === "complete",
               }
               assignments.push(obj);
+              index++;
           }
       })
   }
   else if(props.title === "Senior Design"){
+      var grades = props.student === "Anna" ? annaData.course[1].assignments : props.student === "Keerthi" ? keerthiData.course[1].assignments : tomData.course[1].assignments;
+      var index = 0;
       desData.map(item => {
           if(item.folder === "assignment") {
               var obj = {
                   title: item.title,
                   due: item.end_or_due,
                   combined: item.title + ": " + item.end_or_due,
+                  checked: "{true}" ? grades[index].status === "incomplete" : grades[index].status === "complete",
               }
               assignments.push(obj);
+              index++;
           }
       })
   }
@@ -52,7 +69,7 @@ function TodoList(props) {
         <Divider component="h4"/>
         <FormGroup>
           {assignments.map((value, index) => (
-            <FormControlLabel control={<Checkbox />} label={value.combined} />
+            <FormControlLabel control={<Checkbox checked={value.checked}/>} label={value.combined} />
           ))}
         </FormGroup>
     </div>
