@@ -10,7 +10,8 @@ import uiData from "./course-data/ui/metadata.json"
 import graphData from "./course-data/computer_graphics/metadata.json"
 import desData from "./course-data/senior_design/metadata.json"
 import { borderColor } from "@mui/system";
-
+//references pulled from fullcalendar.io and 
+//https://levelup.gitconnected.com/create-a-month-week-and-day-view-calendar-with-react-and-fullcalendar-1794d76e6d06
 
 var assns = [
   {
@@ -143,10 +144,18 @@ function MyCalendar(props) {
     }
   }
 
+  
   function handleClick(e) {
     props.setComponent('Course');
   }
+  
+  
 
+  function handleDClick(e){
+    console.log('Trigger addEvent Modal Popup')
+  }
+
+  
   return (   
     <div className="Appx">
       
@@ -165,7 +174,7 @@ function MyCalendar(props) {
           eventClick={handleClick}
           
           events={assignmentArray}
-          
+          dateClick={handleDClick}
           customButtons = {{
             sync:{
               text: 'Sync Calendar',
