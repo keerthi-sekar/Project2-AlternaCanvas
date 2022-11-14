@@ -18,7 +18,6 @@ function Info(props) {
 
     return(
         <div style={{display: "flex", flexDirection: "column"}}>
-            <h2>CS {courseNum}</h2>
             <p><strong>Class times</strong>: {times},</p>
             <p><strong>Location: </strong>Baldwin 661</p>
             <p><strong>Instructor:</strong><span>&nbsp;</span>{prof}</p>

@@ -1,4 +1,4 @@
-import React, {useState}  from "react";
+import React, {useState, useEffect}  from "react";
 import TreeView from '@mui/lab/TreeView';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -17,10 +17,15 @@ import desSyllabusHTML from "../course-data/senior_design/course_info/syllabus.h
 
 function Course(props) {
     const [component, setComponent] = useState('Progress')
+    const [courseNum, setCourseNum] = useState(props.title === "User Interface" ? "5067" : props.title === "Computer Graphics" ? "5124" : props.title === "Senior Design" ? "5001" : " ")
     
+    useEffect(() => {
+        setCourseNum(props.title === "User Interface" ? "5067" : props.title === "Computer Graphics" ? "5124" : props.title === "Senior Design" ? "5001" : " ");
+    },[courseNum, props.title])
+
   return (
     <div className="main-content">
-      <header className="course-header">{props.title} <button className="btn btn-primary" onClick={() => props.setShowCourse(false)}>Go Back</button></header>
+      <header className="course-header">CS {courseNum}: {props.title}  <button className="btn btn-primary" onClick={() => props.setShowCourse(false)}>Go Back</button></header>
       <div className="course-body">
         <div className="course-body-inner">
             <div className="course-tree">
