@@ -109,7 +109,7 @@ function HomePage(props) {
             <br></br>
             <div className="row">
                 <div className="col-md-12" style={{width: "450px", height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
-                  <h4> Course Dashboard: CS {courseNum}</h4>
+                  <h4><strong>{className}: CS {courseNum}</strong> </h4>
                   <Divider component="h4"/>
                   {className === "Select Class" ? 
                   <div>
@@ -130,7 +130,7 @@ function HomePage(props) {
             <div className="row">
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
-                  <TodoList/>
+                  <TodoList title={className}/>
                 </div>
             </div>
           </div>

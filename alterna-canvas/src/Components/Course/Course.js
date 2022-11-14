@@ -92,7 +92,7 @@ function Course(props) {
             }
         </div>
         <div className="active-assignments">
-            <TodoList/>
+            <TodoList title={props.title}/>
         </div>
         </div>
     </div>

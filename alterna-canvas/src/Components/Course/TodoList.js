@@ -7,9 +7,8 @@ import graphData from "../course-data/computer_graphics/metadata.json"
 import desData from "../course-data/senior_design/metadata.json"
 
 function TodoList(props) {
-  console.log(props.class)
   var assignments = [];
-  if(props.class === "ui") {
+  if(props.title === "User Interface") {
       var assignments = [];
       uiData.map(item => {
           if(item.folder === "assignment") {
@@ -22,7 +21,7 @@ function TodoList(props) {
           }
       })
   }
-  else if(props.class === "computer_graphics") {
+  else if(props.title === "Computer Graphics") {
       var assignments = [];
       graphData.map(item => {
           if(item.folder === "assignment") {
@@ -35,7 +34,7 @@ function TodoList(props) {
           }
       })
   }
-  else {
+  else if(props.title === "Senior Design"){
       desData.map(item => {
           if(item.folder === "assignment") {
               var obj = {
@@ -47,7 +46,6 @@ function TodoList(props) {
           }
       })
   }
-
   return (
     <div>
         <h4>Todo List</h4>
