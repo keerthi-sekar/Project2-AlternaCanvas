@@ -25,7 +25,7 @@ function Course(props) {
 
   return (
     <div className="main-content">
-      <header className="course-header">CS {courseNum}: {props.title}  <button className="btn btn-primary" onClick={() => props.setShowCourse(false)}>Go Back</button></header>
+      <header className="course-header">CS {courseNum}: {props.title}  <button className="btn btn-primary" onClick={() => props.setShowCourse(false)}>Home</button></header>
       <div className="course-body">
         <div className="course-body-inner">
             <div className="course-tree">
@@ -50,7 +50,6 @@ function Course(props) {
                     <TreeItem nodeId="10" label="Meet">
                         <TreeItem nodeId="11" label="Zoom" onClick={() => setComponent("Zoom")}/>
                         <TreeItem nodeId="12" label="Teams" onClick={() => setComponent("Teams")}/>
-                        <TreeItem nodeId="13" label="Discussion" onClick={() => setComponent("Discussion")}/>
                     </TreeItem>
                 </TreeView>
             </div>
