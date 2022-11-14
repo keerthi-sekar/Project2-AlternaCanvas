@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Project2-AlternaCanvas/static/css/main.daa1ee13.css",
-    "main.js": "/Project2-AlternaCanvas/static/js/main.27431978.js",
+    "main.css": "/Project2-AlternaCanvas/static/css/main.d645a3af.css",
+    "main.js": "/Project2-AlternaCanvas/static/js/main.c450eb1d.js",
     "static/js/107.69d2e30b.chunk.js": "/Project2-AlternaCanvas/static/js/107.69d2e30b.chunk.js",
     "index.html": "/Project2-AlternaCanvas/index.html",
-    "main.daa1ee13.css.map": "/Project2-AlternaCanvas/static/css/main.daa1ee13.css.map",
-    "main.27431978.js.map": "/Project2-AlternaCanvas/static/js/main.27431978.js.map",
+    "main.d645a3af.css.map": "/Project2-AlternaCanvas/static/css/main.d645a3af.css.map",
+    "main.c450eb1d.js.map": "/Project2-AlternaCanvas/static/js/main.c450eb1d.js.map",
     "107.69d2e30b.chunk.js.map": "/Project2-AlternaCanvas/static/js/107.69d2e30b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.daa1ee13.css",
-    "static/js/main.27431978.js"
+    "static/css/main.d645a3af.css",
+    "static/js/main.c450eb1d.js"
   ]
 }
