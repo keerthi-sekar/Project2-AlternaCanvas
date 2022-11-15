@@ -47,7 +47,7 @@ function Course(props) {
                         <TreeItem nodeId="7" label="Overview" onClick={() => setComponent("Info")}/>
                         <TreeItem nodeId="8" label="Annoucements" onClick={() => setComponent("Annoucements")}/>
                         <TreeItem nodeId="9" label="Syllabus" onClick={() => setComponent("Syllabus")}/>
-                        <TreeItem nodeId="10" label="Files" onClick={() => setComponent("Files")}/>
+                        <TreeItem nodeId="10" label="Presentations" onClick={() => setComponent("Presentations")}/>
                     </TreeItem>
                     <TreeItem nodeId="11" label="Meet">
                         <TreeItem nodeId="12" label="Zoom" onClick={() => setComponent("Zoom")}/>
@@ -83,8 +83,8 @@ function Course(props) {
                 component === 'Plan' ?
                 <Plan/>
                 :
-                component === 'Files' ?
-                <Files/>
+                component === 'Presentations' ?
+                <Files class={props.class}/>
                 :
                 component === 'Zoom' ?
                 <Links link={"https://zoom.us/"} name={"Zoom"}/>

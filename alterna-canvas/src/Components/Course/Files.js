@@ -5,7 +5,7 @@ import graphData from "../course-data/computer_graphics/metadata.json"
 import desData from "../course-data/senior_design/metadata.json"
 
 function Files(props){
-    const [fileTitle, setTitle] = useState("Files")
+    const [fileTitle, setTitle] = useState("Presentations")
     var ppts = [];
     if(props.class === "ui") {
         var ppts = [];
@@ -45,13 +45,13 @@ function Files(props){
     return(
         <div className="files-setup" style={{display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center"}}>
             <h1>{fileTitle}</h1>
-            <h5> Click the file title to download materials. </h5>
+            <h5> Click the title to download the presentation. </h5>
             <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
             {ppts.map((value, index) => (
                 <React.Fragment>
                 <ListItem
                     key={index}
-                    onClick={() => alert("Your file has been downloaded!")}
+                    onClick={() => alert("Your presentation has been downloaded!")}
                     sx={{minWidth: '1100px'}}
                 >
                 <ListItemText
@@ -70,9 +70,8 @@ function Files(props){
                             variant="body2"
                             color="text.primary"
                         >
-                            Module:  
+                            Module: {value.module}
                         </Typography>
-                        {value.module}
                         </React.Fragment>
                     }
                 />
