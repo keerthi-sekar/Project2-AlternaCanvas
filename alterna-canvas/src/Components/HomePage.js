@@ -17,6 +17,7 @@ function HomePage(props) {
   const [uiPercent, setUiPercent] = useState(0)
   const [graphPercent, setGraphPercent] = useState(0)
   const [desPercent, setDesPercent] = useState(0)
+  const [ECD, setECD] = useState(props.student === "Tom" ? "12/10/2022" : props.student === "Anna" ? "12/07/2022" : "12/08/2022")
 
   useEffect(() => {
       var uiProgressData = props.student === "Tom" ? [ 20, 50, 30] : props.student === "Anna" ? [10, 30, 20, 40] : [10, 50, 20, 20];
@@ -25,7 +26,8 @@ function HomePage(props) {
       setGraphPercent(100 -  graphProgressData[graphProgressData.length - 1])
       var desProgressData = props.student === "Tom" ? [50, 10, 15, 25] : props.student === "Anna" ? [25, 25, 50] : [65, 35];
       setDesPercent(100 -  desProgressData[desProgressData.length - 1])
-  },[uiPercent, graphPercent, desPercent, props.student])
+      setECD((props.student === "Tom" ? "12/10/2022" : props.student === "Anna" ? "12/07/2022" : "12/08/2022"))
+  },[uiPercent, graphPercent, desPercent, ECD, props.student])
 
   const totalProg = (Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100))
   const remainData = 100 - (Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100))
@@ -82,11 +84,10 @@ function HomePage(props) {
 
       <body>
         <br></br>
-        <br></br>
-        <br></br>
         <div className="row">
           <div className="col text-center">
-              <h3>Current Term: FY 2022</h3>
+              <h2>Current Term: FY 2022</h2>
+              <p><strong>August 22, 2022 - December 10, 2022</strong></p>
               <div className="btn-group" role="group" style={{width: "800px", height: "50px", margin: "5px",padding: "5px",textalign: "center"}}>
                 <button className="btn btn-primary" onClick={() => {setClass('User Interface'); setCourseNum('5067')}} type="button" style={{borderradius: "10px",margin: "2px"}}>User Interface</button>
                 <button className="btn btn-primary" onClick={() => {setClass('Computer Graphics'); setCourseNum('5124')}} type="button" style={{borderradius: "10px",margin: "2px"}}>Computer Graphics</button>
@@ -104,9 +105,9 @@ function HomePage(props) {
                   <h4> Plan Dashboard </h4>
                   <Divider component="h4"/>
                   <br></br>
-                  <h5 style={{textAlign: "center"}}><strong>{Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100)}% Complete</strong></h5>
+                  <h5 style={{textAlign: "center"}}><strong>Overall: {Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100)}% Complete</strong></h5>
                   <div style={{textAlign: "center"}}>
-                    <strong> Will Complete on: </strong> <strong> 12/10/2022 </strong>
+                    <strong> Estimation Date of Completion: </strong> <strong> {ECD} </strong>
                   </div>
                   <br></br>
                   <div className="home-progress-tracker">
