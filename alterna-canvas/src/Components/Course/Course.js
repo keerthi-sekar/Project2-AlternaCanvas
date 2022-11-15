@@ -10,6 +10,7 @@ import Grades from "./Grades";
 import Annoucements from "./Annoucements";
 import Info from "./Info";
 import Plan from "./Plan";
+import Files from "./Files";
 import Links from "./Links"
 import uiSyllabusHTML from "../course-data/ui/course_info/syllabus.html";
 import graphSyllabusHTML from "../course-data/computer_graphics/course_info/syllabus.html";
@@ -46,10 +47,11 @@ function Course(props) {
                         <TreeItem nodeId="7" label="Overview" onClick={() => setComponent("Info")}/>
                         <TreeItem nodeId="8" label="Annoucements" onClick={() => setComponent("Annoucements")}/>
                         <TreeItem nodeId="9" label="Syllabus" onClick={() => setComponent("Syllabus")}/>
+                        <TreeItem nodeId="10" label="Files" onClick={() => setComponent("Files")}/>
                     </TreeItem>
-                    <TreeItem nodeId="10" label="Meet">
-                        <TreeItem nodeId="11" label="Zoom" onClick={() => setComponent("Zoom")}/>
-                        <TreeItem nodeId="12" label="Teams" onClick={() => setComponent("Teams")}/>
+                    <TreeItem nodeId="11" label="Meet">
+                        <TreeItem nodeId="12" label="Zoom" onClick={() => setComponent("Zoom")}/>
+                        <TreeItem nodeId="13" label="Teams" onClick={() => setComponent("Teams")}/>
                     </TreeItem>
                 </TreeView>
             </div>
@@ -80,6 +82,9 @@ function Course(props) {
                 :
                 component === 'Plan' ?
                 <Plan/>
+                :
+                component === 'Files' ?
+                <Files/>
                 :
                 component === 'Zoom' ?
                 <Links link={"https://zoom.us/"} name={"Zoom"}/>
