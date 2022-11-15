@@ -45,10 +45,12 @@ function Assignments(props) {
     }
 
     return(
-        <div className="course-body" style={{display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center"}}>
+        <div className="course-body" style={{display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", marginTop: "5px"}}>
             <h1>{assignmentTitle}</h1>
             {
                 assignmentTitle === 'Assignments' ?
+                <div style={{display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center"}}>
+                <h5> Click the title for more information. </h5>
                 <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                 {assignments.map((value, index) => (
                     <React.Fragment>
@@ -84,9 +86,28 @@ function Assignments(props) {
                     </React.Fragment>
                 ))}
                 </List>
+                </div>
+                :
+                assignmentTitle === 'Submission' ?
+                <div style={{display: "flex", flexDirection: "column"}}>
+                    <button className="btn btn-primary" style={{marginLeft: "5px", width: "100px"}} onClick={() => setTitle("Assignments")}>Go Back</button>
+                    <br/>
+                    <button className="btn btn-primary" style={{marginLeft: "5px"}} onClick={() => alert("Uploading!")}>Upload File</button>
+                    <br/>
+                    <textarea
+                        rows='10'
+                        cols='90'
+                        placeholder='Text Entry Submission...'
+                        style={{marginLeft: "5px"}}
+                    ></textarea>
+                    <br/>
+                    <button className="btn btn-primary" style={{marginLeft: "800px", width: "80px"}} onClick={() => alert("Submitting!")}>Submit</button>
+                </div>
+                    
                 :
                 <div>
-                <button className="btn btn-primary" onClick={() => setTitle("Assignments")}>Go Back</button>
+                <button className="btn btn-primary" style={{marginLeft: "5px"}} onClick={() => setTitle("Assignments")}>Go Back</button>
+                <button className="btn btn-primary" style={{marginLeft: "5px"}} onClick={() => setTitle("Submission")}>Submit</button>
                     <AssignmentInfo assignment={assignmentTitle}/>
                 </div>
             }
