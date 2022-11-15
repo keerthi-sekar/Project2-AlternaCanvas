@@ -63,13 +63,17 @@ function TodoList(props) {
           }
       })
   }
+
+  function handleClick(e) {
+    console.log(e);
+  }
   return (
     <div>
         <h4>Todo List</h4>
         <Divider component="h4"/>
         <FormGroup>
           {assignments.map((value, index) => (
-            <FormControlLabel control={<Checkbox checked={value.checked}/>} label={value.combined} />
+            <FormControlLabel control={<Checkbox defaultChecked={value.checked}/>} label={value.combined} />
           ))}
         </FormGroup>
     </div>

@@ -18,7 +18,8 @@ import desSyllabusHTML from "../course-data/senior_design/course_info/syllabus.h
 function Course(props) {
     const [component, setComponent] = useState('Progress')
     const [courseNum, setCourseNum] = useState(props.title === "User Interface" ? "5067" : props.title === "Computer Graphics" ? "5124" : props.title === "Senior Design" ? "5001" : " ")
-    
+    const [activePlans, setActivePlans] = useState([]);
+
     useEffect(() => {
         setCourseNum(props.title === "User Interface" ? "5067" : props.title === "Computer Graphics" ? "5124" : props.title === "Senior Design" ? "5001" : " ");
     },[courseNum, props.title])
@@ -79,7 +80,7 @@ function Course(props) {
                 <div className="course-inner"><Info class={props.title}/></div>
                 :
                 component === 'Plan' ?
-                <Plan/>
+                <Plan setActivePlans={setActivePlans} activePlans={activePlans}/>
                 :
                 component === 'Zoom' ?
                 <Links link={"https://zoom.us/"} name={"Zoom"}/>
