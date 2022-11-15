@@ -64,9 +64,6 @@ function TodoList(props) {
       })
   }
 
-  function handleClick(e) {
-    console.log(e);
-  }
   return (
     <div>
         <h4>Todo List</h4>
