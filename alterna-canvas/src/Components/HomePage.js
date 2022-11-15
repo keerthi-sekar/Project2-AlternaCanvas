@@ -27,14 +27,17 @@ function HomePage(props) {
       setDesPercent(100 -  desProgressData[desProgressData.length - 1])
   },[uiPercent, graphPercent, desPercent, props.student])
 
-  const chartData = [20, 20, 15, 45];
+  const totalProg = (Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100))
+  const remainData = 100 - (Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100))
+
+  const chartData = [totalProg, remainData];
   const data1 = {
-      labels: ["User Interface", "Computer Graphics", "Senior Design", "Remaining Tasks"],
+      labels: ["Completed", "Remaining"],
       datasets: [
           {
           data: chartData,
           color: "black",
-          backgroundColor: ["purple", "blue", "orange", "white"]
+          backgroundColor: ["#1976d2","white"]
           }
       ],
   };
@@ -99,19 +102,23 @@ function HomePage(props) {
                 <br></br>
                 <div className="col-md-12" style={{width: "450px",height: "500px",background: "#c9c5bb",borderRadius: "10px", borderColor: "black", padding: "20px"}}>
                   <h4> Plan Dashboard </h4>
-                  <h5 style={{textAlign: "center"}}>Semester Plan Progress: {Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100)}% Complete </h5>
+                  <Divider component="h4"/>
+                  <br></br>
+                  <h5 style={{textAlign: "center"}}><strong>{Math.ceil(((uiPercent + graphPercent + desPercent) / 300) * 100)}% Complete</strong></h5>
+                  <div style={{textAlign: "center"}}>
+                    <strong> Will Complete on: </strong> <strong> 12/10/2022 </strong>
+                  </div>
                   <br></br>
                   <div className="home-progress-tracker">
                     <Doughnut data={data1} options={options1} height={250}/>
                   </div>
-                  <br></br>
-                  <strong>User Interface: </strong> <strong style={{color: "green"}}>On Track</strong>
-                  <br></br>
-                  <strong>Computer Graphics: </strong> <strong style={{color: "green"}}>On Track</strong>
-                  <br></br>
-                  <strong>Senior Design: </strong> <strong style={{color: "green"}}>On Track</strong>
-                  <br></br>
-                  <strong> On track to Complete: </strong> <strong style={{color: "blue"}}> 12/10/2022 </strong>
+                  <div style={{textAlign: "right"}}>
+                    <strong>User Interface: </strong> <strong style={{color: "green"}}>On Track</strong>
+                    <br></br>
+                    <strong>Computer Graphics: </strong> <strong style={{color: "green"}}>On Track</strong>
+                    <br></br>
+                    <strong>Senior Design: </strong> <strong style={{color: "green"}}>On Track</strong>
+                  </div>
                 </div>
             </div>
           </div>
