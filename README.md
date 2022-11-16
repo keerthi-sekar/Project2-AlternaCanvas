@@ -41,4 +41,5 @@ npm install css-minimizer-webpack-plugin --save-dev
 npm install babel-preset-es2015
 npm install @fullcalendar/react
 npm install @fullcalendar/daygrid @fullcalendar/timegrid @fullcalendar/interaction
+npm install --save react-notifications
 ```
