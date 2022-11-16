@@ -10,7 +10,7 @@ All subpages/links to different sections of our documentation lives uner /docs. 
 3. **Contextual Inquiry Findings**
 4. **Survey**: Survey was completed with other groups in class. [Alterna-Canvas Survey](https://docs.google.com/forms/d/e/1FAIpQLSdCoTCshfFVahhmOVMcUVnCNUyPRMft0D5_zsonpazvbmS2vg/viewform?usp=sf_link)
 5. **Interfaces:**
-   - Home
+   - Home: [home-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/home-interface.md)
    - Course: [course-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/main/docs/course-interface.md)
    - Calendar
    - Rewards 
