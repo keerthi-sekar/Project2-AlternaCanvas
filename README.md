@@ -10,6 +10,7 @@ Tools & Languages used: React, HTML, JS, CSS
   - Live page is deployed from ```gh-pages``` branch.
 - All subpages & links to different sections of our documentation lives under ```/docs```. Click the links or go to this directory to get the full documentation.
 
+### Documentation Content
 1. **Sketching**: [sketching.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/remaining-doc/docs/sketching.md)
 2. **Requirements & Interviewing Finding**: [requirements-interview.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/remaining-doc/docs/requirements-interview.md)
 3. **Contextual Inquiry Findings**: [contextual-inquiry.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/remaining-doc/docs/contextual-inquiry.md)
