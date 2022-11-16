@@ -38,5 +38,11 @@ There is a dedicated syllabus page under the information header that displays ea
 <br />
 <br />
 
+![image](https://user-images.githubusercontent.com/29307422/202066458-68d330a3-73db-49d4-ac78-b33c11130446.png)
+![image](https://user-images.githubusercontent.com/29307422/202066488-279f3cf1-2c4a-4636-9dfb-4760f0992642.png)
+Presentation Download feature show all of the course presentations. When clicked an alert pops up as a placeholder for downloading.
+<br />
+<br />
+
 ![](images/course-zoom.png)
 The zoom page consists of a link that will take the user to the zoom webpage.
