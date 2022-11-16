@@ -39,5 +39,11 @@ Syllabus feature
 <br />
 <br />
 
+![image](https://user-images.githubusercontent.com/29307422/202066458-68d330a3-73db-49d4-ac78-b33c11130446.png)
+![image](https://user-images.githubusercontent.com/29307422/202066488-279f3cf1-2c4a-4636-9dfb-4760f0992642.png)
+Presentation Download feature
+<br />
+<br />
+
 ![](images/course-zoom.png)
 Zoom feature (links to zoom webpage)
