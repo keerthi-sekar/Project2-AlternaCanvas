@@ -1,6 +1,6 @@
 # Project 2: User Interfaces - AlternaCanvas
 
-**Team Members:** Keerthi Sekar, Anna Chambers, Cara Roth, and Tom Meyers
+**Team Members:** Keerthi Sekar, Anna Chambers, Cara Roth, and Tom Myers
 
 Tools & Languages used: React, HTML, JS, CSS
 
