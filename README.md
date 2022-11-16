@@ -5,7 +5,7 @@
 View the live website here: [Project 2 - Live](https://keerthi-sekar.github.io/Project2-AlternaCanvas/)
 All subpages/links to different sections of our documentation lives uner /docs. Click the links or go to this directory to get the full documentation.
 
-1. **Sketching**
+1. **Sketching**: [sketching.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/remaining-doc/docs/sketching.md)
 2. **Requirements & Interviewing Finding**
 3. **Contextual Inquiry Findings**
 4. **Survey**: Survey was completed with other groups in class. [Alterna-Canvas Survey](https://docs.google.com/forms/d/e/1FAIpQLSdCoTCshfFVahhmOVMcUVnCNUyPRMft0D5_zsonpazvbmS2vg/viewform?usp=sf_link)
