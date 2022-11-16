@@ -9,11 +9,6 @@ All subpages/links to different sections of our documentation lives uner /docs. 
 1. **Sketching**: [sketching.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/remaining-doc/docs/sketching.md)
 2. **Requirements & Interviewing Finding**: [requirements-interview.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/remaining-doc/docs/requirements-interview.md)
 3. **Contextual Inquiry Findings**: [contextual-inquiry.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/remaining-doc/docs/contextual-inquiry.md)
-=======
-1. **Sketching**
-2. **Requirements & Interviewing Findings**
-3. **Contextual Inquiry Findings**
->>>>>>> main
 4. **Survey**: Survey was completed with other groups in class. [Alterna-Canvas Survey](https://docs.google.com/forms/d/e/1FAIpQLSdCoTCshfFVahhmOVMcUVnCNUyPRMft0D5_zsonpazvbmS2vg/viewform?usp=sf_link)
 5. **Interfaces:**
    - Home: [home-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/home-interface.md)
