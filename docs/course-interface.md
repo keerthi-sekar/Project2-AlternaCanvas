@@ -5,39 +5,38 @@ The main content of our application exisits within the individual course pages. 
 ## Features and Controls
 ![](images/course-default.png)
 ![](images/course-default2.png)
-Overall features (dynamic per class and per student) <br />
-Progress features (chart 1 = amount of work done on active assignments. chart 2 = hours worked on this class this week)
+The default page for each course shows the users progress in the course. The two main features on this page are the percentage completed graph and the hours worked graph. The purpose of these features is to show the student how much they have done and how much they have left to do. The progress page is dynamic and changes per student.
 <br />
 <br />
 
 ![](images/course-grades1.png)
 ![](images/course-grades2.png)
-Grade features (changes per student, color coded by grade level)
+The next page on the course component shows the students their grades. This view highlights the assignments with three different colors to display the grade range .
 <br />
 <br />
 
 ![](images/course-assignments1.png)
 ![](images/course-assignments2.png)
 ![](images/course-assignments-submission.png)
-Assignment features (clickable to take to assignment description. Submit button takes to submission page with text entryand file upload. Alerts to mock uploading a file and submitting)
+The assignment page shows the assignments associated with class. When you click on the assignment it takes you to the assignment details page. Once on the details page the user can click on the submit button and are taken to the submission page. On the submission page the user can add a text entry or upload a file. The application gives alerts as placeholders for where the real upload and submission would take place.
 <br />
 <br />
 
 ![](images/course-plan1.png)
 ![](images/course-plan2.png)
-Plan Features (user makes a plan and lisk of plans is shown and progress towards plan is updated as they check tasks off)
+The plan page allows for more organization and motivation for the student. The student can enter a title for a new plan and a list of tasks for the plan and start and end dates. The interface will show all plans created by the student and progress towards them. It will also show if they are behind or on track for each task.
 <br />
 <br />
 
 ![](images/course-annoucements.png)
-Annoucements feature
+The annoucent page shows a list of annoucements made by the professor chronological order.
 <br />
 <br />
 
 ![](images/course-syllabus.png)
-Syllabus feature
+There is a dedicated syllabus page under the information header that displays each course syllabus.
 <br />
 <br />
 
 ![](images/course-zoom.png)
-Zoom feature (links to zoom webpage)
+The zoom page consists of a link that will take the user to the zoom webpage.
