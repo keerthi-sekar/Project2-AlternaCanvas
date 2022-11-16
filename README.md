@@ -15,7 +15,7 @@ All subpages/links to different sections of our documentation lives uner /docs. 
    - Calendar
    - Rewards [rewards-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/reward-interface.md)
    - Notes
-6. **Demo Video**
+6. **Demo Video** [AlternaCanva.mp4](https://www.youtube.com/watch?v=nCf_DAOjX1c)
 
 
 ## Repo Set-up
