@@ -20,6 +20,7 @@ Tools & Languages used: React, HTML, JS, CSS
    - Home: [home-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/home-interface.md)
    - Course: [course-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/main/docs/course-interface.md)
    - Calendar: [Calendar-Implementation.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/main/docs/Calendar-Implementation.md)
+   - Notifications: [Notifications.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/main/docs/Notifications.md)
    - Rewards: [rewards-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/reward-interface.md)
    - Notes & Reminders: [notes-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/notes-interface.md)
 6. **Demo Video:** [AlternaCanva.mp4](https://www.youtube.com/watch?v=nCf_DAOjX1c)
