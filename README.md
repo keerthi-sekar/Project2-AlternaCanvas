@@ -13,7 +13,7 @@ All subpages/links to different sections of our documentation lives uner /docs. 
    - Home: [home-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/home-interface.md)
    - Course: [course-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/main/docs/course-interface.md)
    - Calendar
-   - Rewards 
+   - Rewards [rewards-interface.md](https://github.com/keerthi-sekar/Project2-AlternaCanvas/blob/home-documentation/docs/reward-interface.md)
    - Notes
 6. **Demo Video**
 
