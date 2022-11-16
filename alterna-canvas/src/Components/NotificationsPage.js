@@ -2,12 +2,7 @@
 import React from 'react'
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import { Helmet } from "react-helmet";
 import 'bootstrap/dist/css/bootstrap.css';
-import Course from "./Course";
-import TodoList from "./TodoList";
-import Info from "./Info";
-import {ListItem, List, ListItemText, Typography, Divider} from '@mui/material';
 
 
 
@@ -15,15 +10,42 @@ class Example extends React.Component {
   createNotification = (type) => {
     return () => {
       switch (type) {
-        case 'info':
-          NotificationManager.info('Info message');
+        case 'infoUser':
+          NotificationManager.info('New Information From User Interface');
           break;
-        case 'success':
-          NotificationManager.success('Graded: Getting to know you', '');
+        
+        case 'infoGraph':
+          NotificationManager.info('New Information From Computer Graphics');
           break;
-        case 'warning':
-          NotificationManager.warning('Warning not message', 'Close after 3000ms', 3000);
+        
+        case 'infoSenior':
+          NotificationManager.info('New Information From Senior Design');
           break;
+        
+        case 'successUser':
+          NotificationManager.success('Assignment Graded In User Interfaces', '');
+          break;
+        
+        case 'successGraph':
+          NotificationManager.success('Assignment Graded In Computer Graphics', '');
+          break;
+          
+        case 'successSenior':
+          NotificationManager.success('Assignment Graded In Senior Design', '');
+          break;
+          
+        case 'warningUser':
+          NotificationManager.warning('Missing Assignment In User Interfaces',);
+          break;
+
+        case 'warningGraph':
+          NotificationManager.warning('Missing Assignment In User Interfaces',);
+          break;
+        
+        case 'warningSenior':
+          NotificationManager.warning('Missing Assignment In User Interfaces',);
+          break;
+        
         case 'error':
           NotificationManager.error('Error message', 'Click me!', 5000, () => {
             alert('callback');
@@ -38,26 +60,69 @@ class Example extends React.Component {
   render() {
     return (
       <div class="home-content">
+        <h3>User Interfaces:</h3>
+        <h4>Class canceled today</h4>
         <button className='btn btn-info'
-          onClick={this.createNotification('info')}>Info
+          onClick={this.createNotification('infoUser')}>Test
         </button>
         <hr/>
-        <button className='btn btn-success'
-          onClick={this.createNotification('success')}>Success
+        <h3>Computer Graphics:</h3>
+        <h4>Class canceled today</h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('infoGraph')}>Test
         </button>
         <hr/>
-        <button className='btn btn-warning'
-          onClick={this.createNotification('warning')}>Warning
+        <h3>Senior Design:</h3>
+        <h4>Class canceled today</h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('infoSenior')}>Test
         </button>
         <hr/>
-        <button className='btn btn-danger'
-          onClick={this.createNotification('error')}>Error
+       
+        <h3>User Interfaces:</h3>
+        <h4>Assignment Graded
+        </h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('successUser')}>Test
         </button>
+        <hr/>
+        <h3>Computer Graphics:</h3>
+        <h4>Assignment Graded</h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('successGraph')}>Test
+        </button>
+        <hr/>
+        <h3>Senior Design:</h3>
+        <h4>Assignment Graded</h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('successSenior')}>Test
+        </button>
+        <hr/>
 
+        <h3>User Interfaces:</h3>
+        <h4>Missing Assignment</h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('warningUser')}>Test
+        </button>
+        <hr/>
+        <h3>Computer Graphics:</h3>
+        <h4>Missing Assignment</h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('warningGraph')}>Test
+        </button>
+        <hr/>
+        <h3>Senior Design:</h3>
+        <h4>Missing Assignment</h4>
+        <button className='btn btn-info'
+          onClick={this.createNotification('warningSenior')}>Test
+        </button>
+        <hr/>
         <NotificationContainer/>
       </div>
     );
   }
 }
+
+
 
 export default Example;
